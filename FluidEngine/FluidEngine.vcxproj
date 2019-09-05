@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{59A2A9A0-F4EF-44F0-88E7-FAA999D44602}</ProjectGuid>
+    <RootNamespace>FluidEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../lib</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>../lib</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>../lib</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>../lib</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tbb.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tbb.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tbb.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tbb.lib;tbb_debug.lib;gtest.lib;gmock.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Geometry\AnisotropicPointsToImplicit2.cpp" />
+    <ClCompile Include="Engine\Geometry\AnisotropicPointsToImplicit3.cpp" />
+    <ClCompile Include="Engine\Geometry\Box2.cpp" />
+    <ClCompile Include="Engine\Geometry\Box3.cpp" />
+    <ClCompile Include="Engine\Geometry\CellCenteredScalarGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\CellCenteredScalarGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\CellCenteredVectorGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\CellCenteredVectorGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\CollocatedVectorGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\CollocatedVectorGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\CustomImplicitSurface2.cpp" />
+    <ClCompile Include="Engine\Geometry\CustomImplicitSurface3.cpp" />
+    <ClCompile Include="Engine\Geometry\Cylinder3.cpp" />
+    <ClCompile Include="Engine\Geometry\FaceCenteredGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\FaceCenteredGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\Grid2.cpp" />
+    <ClCompile Include="Engine\Geometry\Grid3.cpp" />
+    <ClCompile Include="Engine\Geometry\ImplicitSurface2.cpp" />
+    <ClCompile Include="Engine\Geometry\ImplicitSurface3.cpp" />
+    <ClCompile Include="Engine\Geometry\ImplicitSurfaceSet2.cpp" />
+    <ClCompile Include="Engine\Geometry\ImplicitSurfaceSet3.cpp" />
+    <ClCompile Include="Engine\Geometry\ImplicitTriangleMesh3.cpp" />
+    <ClCompile Include="Engine\Geometry\MarchingCubes.cpp" />
+    <ClCompile Include="Engine\Geometry\Plane2.cpp" />
+    <ClCompile Include="Engine\Geometry\Plane3.cpp" />
+    <ClCompile Include="Engine\Geometry\PointsToImplicit2.cpp" />
+    <ClCompile Include="Engine\Geometry\PointsToImplicit3.cpp" />
+    <ClCompile Include="Engine\Geometry\ScalarGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\ScalarGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\Sphere2.cpp" />
+    <ClCompile Include="Engine\Geometry\Sphere3.cpp" />
+    <ClCompile Include="Engine\Geometry\SphericalPointsToImplicit2.cpp" />
+    <ClCompile Include="Engine\Geometry\SphericalPointsToImplicit3.cpp" />
+    <ClCompile Include="Engine\Geometry\SphPointsToImplicit2.cpp" />
+    <ClCompile Include="Engine\Geometry\SphPointsToImplicit3.cpp" />
+    <ClCompile Include="Engine\Geometry\Surface2.cpp" />
+    <ClCompile Include="Engine\Geometry\Surface3.cpp" />
+    <ClCompile Include="Engine\Geometry\SurfaceSet2.cpp" />
+    <ClCompile Include="Engine\Geometry\SurfaceSet3.cpp" />
+    <ClCompile Include="Engine\Geometry\SurfaceToImplicit3.cpp" />
+    <ClCompile Include="Engine\Geometry\SurfaceToImplicit2.cpp" />
+    <ClCompile Include="Engine\Geometry\Triangle3.cpp" />
+    <ClCompile Include="Engine\Geometry\TriangleMesh3.cpp" />
+    <ClCompile Include="Engine\Geometry\TriangleMeshToSdf.cpp" />
+    <ClCompile Include="Engine\Geometry\VectorGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\VectorGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\VertexCenteredScalarGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\VertexCenteredScalarGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\VertexCenteredVectorGrid2.cpp" />
+    <ClCompile Include="Engine\Geometry\VertexCenteredVectorGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\ZhuBridsonPointsToImplicit2.cpp" />
+    <ClCompile Include="Engine\Geometry\ZhuBridsonPointsToImplicit3.cpp" />
+    <ClCompile Include="Engine\Math\ConstantScalarField2.cpp" />
+    <ClCompile Include="Engine\Math\ConstantScalarField3.cpp" />
+    <ClCompile Include="Engine\Math\ConstantVectorField2.cpp" />
+    <ClCompile Include="Engine\Math\ConstantVectorField3.cpp" />
+    <ClCompile Include="Engine\Math\CustomScalarField2.cpp" />
+    <ClCompile Include="Engine\Math\CustomScalarField3.cpp" />
+    <ClCompile Include="Engine\Math\CustomVectorField2.cpp" />
+    <ClCompile Include="Engine\Math\CustomVectorField3.cpp" />
+    <ClCompile Include="Engine\Math\FdmCgSolver2.cpp" />
+    <ClCompile Include="Engine\Math\FdmCgSolver3.cpp" />
+    <ClCompile Include="Engine\Math\FdmGaussSeidelSolver2.cpp" />
+    <ClCompile Include="Engine\Math\FdmGaussSeidelSolver3.cpp" />
+    <ClCompile Include="Engine\Math\FdmIccgSolver2.cpp" />
+    <ClCompile Include="Engine\Math\FdmIccgSolver3.cpp" />
+    <ClCompile Include="Engine\Math\FdmJacobiSolver2.cpp" />
+    <ClCompile Include="Engine\Math\FdmJacobiSolver3.cpp" />
+    <ClCompile Include="Engine\Math\FdmLinearSystem2.cpp" />
+    <ClCompile Include="Engine\Math\FdmLinearSystem3.cpp" />
+    <ClCompile Include="Engine\Math\FdmMgLinearSystem2.cpp" />
+    <ClCompile Include="Engine\Math\FdmMgLinearSystem3.cpp" />
+    <ClCompile Include="Engine\Math\FdmMgpcgSolver2.cpp" />
+    <ClCompile Include="Engine\Math\FdmMgpcgSolver3.cpp" />
+    <ClCompile Include="Engine\Math\FdmMgSolver2.cpp" />
+    <ClCompile Include="Engine\Math\FdmMgSolver3.cpp" />
+    <ClCompile Include="Engine\Math\Field2.cpp" />
+    <ClCompile Include="Engine\Math\Field3.cpp" />
+    <ClCompile Include="Engine\Math\VectorField2.cpp" />
+    <ClCompile Include="Engine\Math\VectorField3.cpp" />
+    <ClCompile Include="Engine\Math\ScalarField2.cpp" />
+    <ClCompile Include="Engine\Math\ScalarField3.cpp" />
+    <ClCompile Include="Engine\Simulation\AdvectionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\AdvectionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\Animation.cpp" />
+    <ClCompile Include="Engine\Simulation\BccLatticePointGenerator.cpp" />
+    <ClCompile Include="Engine\Simulation\Collider2.cpp" />
+    <ClCompile Include="Engine\Simulation\Collider3.cpp" />
+    <ClCompile Include="Engine\Simulation\ColliderSet2.cpp" />
+    <ClCompile Include="Engine\Simulation\ColliderSet3.cpp" />
+    <ClCompile Include="Engine\Simulation\CubicSemiLagrangian2.cpp" />
+    <ClCompile Include="Engine\Simulation\CubicSemiLagrangian3.cpp" />
+    <ClCompile Include="Engine\Simulation\FccLatticePointGenerator.cpp" />
+    <ClCompile Include="Engine\Simulation\GridBackwardEulerDiffusionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridBackwardEulerDiffusionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridBlockedBoundaryConditionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridBlockedBoundaryConditionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridBoundaryConditionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridBoundaryConditionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridDiffusionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridDiffusionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridEmitter2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridEmitter3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridEmitterSet2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridEmitterSet3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridForwardEulerDiffusionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridForwardEulerDiffusionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridFractionalBoundaryConditionSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridFractionalBoundaryConditionSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridFractionalSinglePhasePressureSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridFractionalSinglePhasePressureSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridPointGenerator2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridPointGenerator3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridPressureSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridPressureSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridSinglePhasePressureSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridSinglePhasePressureSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridSystemData2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridSystemData3.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleEmitter2.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleEmitter3.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleEmitterSet2.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleEmitterSet3.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleSystemData2.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleSystemData3.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleSystemSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\ParticleSystemSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\PciSphSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\PciSphSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\PhysicsAnimation.cpp" />
+    <ClCompile Include="Engine\Simulation\PointGenerator2.cpp" />
+    <ClCompile Include="Engine\Simulation\PointGenerator3.cpp" />
+    <ClCompile Include="Engine\Simulation\PointHashGridSearcher2.cpp" />
+    <ClCompile Include="Engine\Simulation\PointHashGridSearcher3.cpp" />
+    <ClCompile Include="Engine\Simulation\PointNeighborSearcher2.cpp" />
+    <ClCompile Include="Engine\Simulation\PointNeighborSearcher3.cpp" />
+    <ClCompile Include="Engine\Simulation\PointParallelHashGridSearcher2.cpp" />
+    <ClCompile Include="Engine\Simulation\PointParallelHashGridSearcher3.cpp" />
+    <ClCompile Include="Engine\Simulation\PointParticleEmitter2.cpp" />
+    <ClCompile Include="Engine\Simulation\PointParticleEmitter3.cpp" />
+    <ClCompile Include="Engine\Simulation\RigidBodyCollider2.cpp" />
+    <ClCompile Include="Engine\Simulation\RigidBodyCollider3.cpp" />
+    <ClCompile Include="Engine\Simulation\SemiLagrangian2.cpp" />
+    <ClCompile Include="Engine\Simulation\SemiLagrangian3.cpp" />
+    <ClCompile Include="Engine\Simulation\SphSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\SphSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\SphSystemData2.cpp" />
+    <ClCompile Include="Engine\Simulation\SphSystemData3.cpp" />
+    <ClCompile Include="Engine\Simulation\Timer.cpp" />
+    <ClCompile Include="Engine\Simulation\TrianglePointGenerator.cpp" />
+    <ClCompile Include="Engine\Simulation\VolumeGridEmitter2.cpp" />
+    <ClCompile Include="Engine\Simulation\VolumeGridEmitter3.cpp" />
+    <ClCompile Include="Engine\Simulation\VolumeParticleEmitter2.cpp" />
+    <ClCompile Include="Engine\Simulation\VolumeParticleEmitter3.cpp" />
+    <ClCompile Include="Engine\Utils\FdmUtils.cpp" />
+    <ClCompile Include="Engine\Utils\Logging.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Geometry\AnisotropicPointsToImplicit2.h" />
+    <ClInclude Include="Engine\Geometry\AnisotropicPointsToImplicit3.h" />
+    <ClInclude Include="Engine\Geometry\BoundingBox.h" />
+    <ClInclude Include="Engine\Geometry\BoundingBox2.h" />
+    <ClInclude Include="Engine\Geometry\BoundingBox3.h" />
+    <ClInclude Include="Engine\Geometry\Box2.h" />
+    <ClInclude Include="Engine\Geometry\Box3.h" />
+    <ClInclude Include="Engine\Geometry\Bvh2.h" />
+    <ClInclude Include="Engine\Geometry\Bvh3.h" />
+    <ClInclude Include="Engine\Geometry\CellCenteredScalarGrid2.h" />
+    <ClInclude Include="Engine\Geometry\CellCenteredScalarGrid3.h" />
+    <ClInclude Include="Engine\Geometry\CellCenteredVectorGrid2.h" />
+    <ClInclude Include="Engine\Geometry\CellCenteredVectorGrid3.h" />
+    <ClInclude Include="Engine\Geometry\CollocatedVectorGrid2.h" />
+    <ClInclude Include="Engine\Geometry\CollocatedVectorGrid3.h" />
+    <ClInclude Include="Engine\Geometry\CustomImplicitSurface2.h" />
+    <ClInclude Include="Engine\Geometry\CustomImplicitSurface3.h" />
+    <ClInclude Include="Engine\Geometry\Cylinder3.h" />
+    <ClInclude Include="Engine\Geometry\FaceCenteredGrid2.h" />
+    <ClInclude Include="Engine\Geometry\FaceCenteredGrid3.h" />
+    <ClInclude Include="Engine\Geometry\Grid2.h" />
+    <ClInclude Include="Engine\Geometry\Grid3.h" />
+    <ClInclude Include="Engine\Geometry\ImplicitSurface2.h" />
+    <ClInclude Include="Engine\Geometry\ImplicitSurface3.h" />
+    <ClInclude Include="Engine\Geometry\ImplicitSurfaceSet2.h" />
+    <ClInclude Include="Engine\Geometry\ImplicitSurfaceSet3.h" />
+    <ClInclude Include="Engine\Geometry\ImplicitTriangleMesh3.h" />
+    <ClInclude Include="Engine\Geometry\IntersectionQueryEngine2.h" />
+    <ClInclude Include="Engine\Geometry\IntersectionQueryEngine3.h" />
+    <ClInclude Include="Engine\Geometry\MarchingCubes.h" />
+    <ClInclude Include="Engine\Geometry\MarchingCubesTable.h" />
+    <ClInclude Include="Engine\Geometry\MarchingSquaresTable.h" />
+    <ClInclude Include="Engine\Geometry\NearestNeighborQueryEngine2.h" />
+    <ClInclude Include="Engine\Geometry\NearestNeighborQueryEngine3.h" />
+    <ClInclude Include="Engine\Geometry\Plane2.h" />
+    <ClInclude Include="Engine\Geometry\Plane3.h" />
+    <ClInclude Include="Engine\Geometry\PointsToImplicit2.h" />
+    <ClInclude Include="Engine\Geometry\PointsToImplicit3.h" />
+    <ClInclude Include="Engine\Geometry\Ray.h" />
+    <ClInclude Include="Engine\Geometry\Ray2.h" />
+    <ClInclude Include="Engine\Geometry\Ray3.h" />
+    <ClInclude Include="Engine\Geometry\ScalarGrid2.h" />
+    <ClInclude Include="Engine\Geometry\ScalarGrid3.h" />
+    <ClInclude Include="Engine\Geometry\Sphere2.h" />
+    <ClInclude Include="Engine\Geometry\Sphere3.h" />
+    <ClInclude Include="Engine\Geometry\SphericalPointsToImplicit2.h" />
+    <ClInclude Include="Engine\Geometry\SphericalPointsToImplicit3.h" />
+    <ClInclude Include="Engine\Geometry\SphPointsToImplicit2.h" />
+    <ClInclude Include="Engine\Geometry\SphPointsToImplicit3.h" />
+    <ClInclude Include="Engine\Geometry\Surface2.h" />
+    <ClInclude Include="Engine\Geometry\Surface3.h" />
+    <ClInclude Include="Engine\Geometry\SurfaceSet2.h" />
+    <ClInclude Include="Engine\Geometry\SurfaceSet3.h" />
+    <ClInclude Include="Engine\Geometry\SurfaceToImplicit2.h" />
+    <ClInclude Include="Engine\Geometry\SurfaceToImplicit3.h" />
+    <ClInclude Include="Engine\Geometry\Transform2.h" />
+    <ClInclude Include="Engine\Geometry\Transform3.h" />
+    <ClInclude Include="Engine\Geometry\Triangle3.h" />
+    <ClInclude Include="Engine\Geometry\TriangleMesh3.h" />
+    <ClInclude Include="Engine\Geometry\TriangleMeshToSdf.h" />
+    <ClInclude Include="Engine\Geometry\VectorGrid2.h" />
+    <ClInclude Include="Engine\Geometry\VectorGrid3.h" />
+    <ClInclude Include="Engine\Geometry\VertexCenteredScalarGrid2.h" />
+    <ClInclude Include="Engine\Geometry\VertexCenteredScalarGrid3.h" />
+    <ClInclude Include="Engine\Geometry\VertexCenteredVectorGrid2.h" />
+    <ClInclude Include="Engine\Geometry\VertexCenteredVectorGrid3.h" />
+    <ClInclude Include="Engine\Geometry\ZhuBridsonPointsToImplicit2.h" />
+    <ClInclude Include="Engine\Geometry\ZhuBridsonPointsToImplicit3.h" />
+    <ClInclude Include="Engine\Math\Array.h" />
+    <ClInclude Include="Engine\Math\Array1.h" />
+    <ClInclude Include="Engine\Math\Array2.h" />
+    <ClInclude Include="Engine\Math\Array3.h" />
+    <ClInclude Include="Engine\Math\ArrayAccessor.h" />
+    <ClInclude Include="Engine\Math\ArrayAccessor1.h" />
+    <ClInclude Include="Engine\Math\ArrayAccessor2.h" />
+    <ClInclude Include="Engine\Math\ArrayAccessor3.h" />
+    <ClInclude Include="Engine\Math\ArraySamplers1.h" />
+    <ClInclude Include="Engine\Math\ArraySamplers.h" />
+    <ClInclude Include="Engine\Math\ArraySamplers2.h" />
+    <ClInclude Include="Engine\Math\ArraySamplers3.h" />
+    <ClInclude Include="Engine\Math\Blas.h" />
+    <ClInclude Include="Engine\Math\ConstantScalarField2.h" />
+    <ClInclude Include="Engine\Math\ConstantScalarField3.h" />
+    <ClInclude Include="Engine\Math\ConstantVectorField2.h" />
+    <ClInclude Include="Engine\Math\ConstantVectorField3.h" />
+    <ClInclude Include="Engine\Math\CustomScalarField2.h" />
+    <ClInclude Include="Engine\Math\CustomScalarField3.h" />
+    <ClInclude Include="Engine\Math\CustomVectorField2.h" />
+    <ClInclude Include="Engine\Math\CustomVectorField3.h" />
+    <ClInclude Include="Engine\Math\FdmCgSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmCgSolver3.h" />
+    <ClInclude Include="Engine\Math\FdmGaussSeidelSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmGaussSeidelSolver3.h" />
+    <ClInclude Include="Engine\Math\FdmIccgSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmIccgSolver3.h" />
+    <ClInclude Include="Engine\Math\FdmJacobiSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmJacobiSolver3.h" />
+    <ClInclude Include="Engine\Math\FdmLinearSystem2.h" />
+    <ClInclude Include="Engine\Math\FdmLinearSystem3.h" />
+    <ClInclude Include="Engine\Math\FdmLinearSystemSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmLinearSystemSolver3.h" />
+    <ClInclude Include="Engine\Math\FdmMgLinearSystem2.h" />
+    <ClInclude Include="Engine\Math\FdmMgLinearSystem3.h" />
+    <ClInclude Include="Engine\Math\FdmMgpcgSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmMgpcgSolver3.h" />
+    <ClInclude Include="Engine\Math\FdmMgSolver2.h" />
+    <ClInclude Include="Engine\Math\FdmMgSolver3.h" />
+    <ClInclude Include="Engine\Math\Field2.h" />
+    <ClInclude Include="Engine\Math\Field3.h" />
+    <ClInclude Include="Engine\Math\Functors.h" />
+    <ClInclude Include="Engine\Math\Matrix.h" />
+    <ClInclude Include="Engine\Math\Matrix2x2.h" />
+    <ClInclude Include="Engine\Math\Matrix3x3.h" />
+    <ClInclude Include="Engine\Math\Matrix4x4.h" />
+    <ClInclude Include="Engine\Math\MatrixCsr.h" />
+    <ClInclude Include="Engine\Math\MatrixExpression.h" />
+    <ClInclude Include="Engine\Math\MatrixMxN.h" />
+    <ClInclude Include="Engine\Math\Cg.h" />
+    <ClInclude Include="Engine\Math\Mg.h" />
+    <ClInclude Include="Engine\Math\Point.h" />
+    <ClInclude Include="Engine\Math\Point2.h" />
+    <ClInclude Include="Engine\Math\Point3.h" />
+    <ClInclude Include="Engine\Math\Quaternion.h" />
+    <ClInclude Include="Engine\Math\Samplers.h" />
+    <ClInclude Include="Engine\Math\ScalarField2.h" />
+    <ClInclude Include="Engine\Math\ScalarField3.h" />
+    <ClInclude Include="Engine\Math\Size.h" />
+    <ClInclude Include="Engine\Math\Size2.h" />
+    <ClInclude Include="Engine\Math\Size3.h" />
+    <ClInclude Include="Engine\Math\Vector.h" />
+    <ClInclude Include="Engine\Math\Vector2.h" />
+    <ClInclude Include="Engine\Math\Vector3.h" />
+    <ClInclude Include="Engine\Math\Vector4.h" />
+    <ClInclude Include="Engine\Math\VectorExpression.h" />
+    <ClInclude Include="Engine\Math\VectorField2.h" />
+    <ClInclude Include="Engine\Math\VectorField3.h" />
+    <ClInclude Include="Engine\Math\VectorN.h" />
+    <ClInclude Include="Engine\Simulation\AdvectionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\AdvectionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\Animation.h" />
+    <ClInclude Include="Engine\Simulation\BccLatticePointGenerator.h" />
+    <ClInclude Include="Engine\Simulation\Collider2.h" />
+    <ClInclude Include="Engine\Simulation\Collider3.h" />
+    <ClInclude Include="Engine\Simulation\ColliderSet2.h" />
+    <ClInclude Include="Engine\Simulation\ColliderSet3.h" />
+    <ClInclude Include="Engine\Simulation\CubicSemiLagrangian2.h" />
+    <ClInclude Include="Engine\Simulation\CubicSemiLagrangian3.h" />
+    <ClInclude Include="Engine\Simulation\FccLatticePointGenerator.h" />
+    <ClInclude Include="Engine\Simulation\GridBackwardEulerDiffusionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridBackwardEulerDiffusionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridBlockedBoundaryConditionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridBlockedBoundaryConditionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridBoundaryConditionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridBoundaryConditionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridDiffusionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridDiffusionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridEmitter2.h" />
+    <ClInclude Include="Engine\Simulation\GridEmitter3.h" />
+    <ClInclude Include="Engine\Simulation\GridEmitterSet2.h" />
+    <ClInclude Include="Engine\Simulation\GridEmitterSet3.h" />
+    <ClInclude Include="Engine\Simulation\GridFluidSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridFluidSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridForwardEulerDiffusionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridForwardEulerDiffusionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridFractionalBoundaryConditionSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridFractionalBoundaryConditionSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridFractionalSinglePhasePressureSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridFractionalSinglePhasePressureSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridPointGenerator2.h" />
+    <ClInclude Include="Engine\Simulation\GridPointGenerator3.h" />
+    <ClInclude Include="Engine\Simulation\GridPressureSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridPressureSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridSinglePhasePressureSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridSinglePhasePressureSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridSystemData2.h" />
+    <ClInclude Include="Engine\Simulation\GridSystemData3.h" />
+    <ClInclude Include="Engine\Simulation\ParticleEmitter2.h" />
+    <ClInclude Include="Engine\Simulation\ParticleEmitter3.h" />
+    <ClInclude Include="Engine\Simulation\ParticleEmitterSet2.h" />
+    <ClInclude Include="Engine\Simulation\ParticleEmitterSet3.h" />
+    <ClInclude Include="Engine\Simulation\ParticleSystemData2.h" />
+    <ClInclude Include="Engine\Simulation\ParticleSystemData3.h" />
+    <ClInclude Include="Engine\Simulation\ParticleSystemSolver2.h" />
+    <ClInclude Include="Engine\Simulation\ParticleSystemSolver3.h" />
+    <ClInclude Include="Engine\Simulation\PciSphSolver2.h" />
+    <ClInclude Include="Engine\Simulation\PciSphSolver3.h" />
+    <ClInclude Include="Engine\Simulation\PhysicsAnimation.h" />
+    <ClInclude Include="Engine\Simulation\PointGenerator2.h" />
+    <ClInclude Include="Engine\Simulation\PointGenerator3.h" />
+    <ClInclude Include="Engine\Simulation\PointHashGridSearcher2.h" />
+    <ClInclude Include="Engine\Simulation\PointHashGridSearcher3.h" />
+    <ClInclude Include="Engine\Simulation\PointNeighborSearcher2.h" />
+    <ClInclude Include="Engine\Simulation\PointNeighborSearcher3.h" />
+    <ClInclude Include="Engine\Simulation\PointParallelHashGridSearcher2.h" />
+    <ClInclude Include="Engine\Simulation\PointParallelHashGridSearcher3.h" />
+    <ClInclude Include="Engine\Simulation\PointParticleEmitter2.h" />
+    <ClInclude Include="Engine\Simulation\PointParticleEmitter3.h" />
+    <ClInclude Include="Engine\Simulation\RigidBodyCollider2.h" />
+    <ClInclude Include="Engine\Simulation\RigidBodyCollider3.h" />
+    <ClInclude Include="Engine\Simulation\SemiLagrangian2.h" />
+    <ClInclude Include="Engine\Simulation\SemiLagrangian3.h" />
+    <ClInclude Include="Engine\Simulation\Serialization.h" />
+    <ClInclude Include="Engine\Simulation\SphKernels2.h" />
+    <ClInclude Include="Engine\Simulation\SphKernels3.h" />
+    <ClInclude Include="Engine\Simulation\SphSolver2.h" />
+    <ClInclude Include="Engine\Simulation\SphSolver3.h" />
+    <ClInclude Include="Engine\Simulation\SphSystemData2.h" />
+    <ClInclude Include="Engine\Simulation\SphSystemData3.h" />
+    <ClInclude Include="Engine\Simulation\Timer.h" />
+    <ClInclude Include="Engine\Simulation\TrianglePointGenerator.h" />
+    <ClInclude Include="Engine\Simulation\VolumeGridEmitter2.h" />
+    <ClInclude Include="Engine\Simulation\VolumeParticleEmitter2.h" />
+    <ClInclude Include="Engine\Simulation\VolumeParticleEmitter3.h" />
+    <ClInclude Include="Engine\Simulation\VolumeGridEmitter3.h" />
+    <ClInclude Include="Engine\Utils\ArrayUtils.h" />
+    <ClInclude Include="Engine\Utils\Constants.h" />
+    <ClInclude Include="Engine\Utils\FdmUtils.h" />
+    <ClInclude Include="Engine\Utils\LevelSetUtils.h" />
+    <ClInclude Include="Engine\Utils\Logging.h" />
+    <ClInclude Include="Engine\Utils\Macros.h" />
+    <ClInclude Include="Engine\Utils\MathUtils.h" />
+    <ClInclude Include="Engine\Utils\Parallel.h" />
+    <ClInclude Include="Engine\Utils\PhysicsHelper.h" />
+    <ClInclude Include="Engine\Utils\Serial.h" />
+    <ClInclude Include="ManualTest\ManualTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

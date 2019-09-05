@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{9A2E300A-B974-416F-B7CE-B21225FA7719}</ProjectGuid>
+    <RootNamespace>Test</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../..;../../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;gmock.lib;tbb.lib;FluidEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../..;../../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;gmock.lib;tbb.lib;FluidEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../..;../../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;gmock.lib;tbb.lib;FluidEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../..;../../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;gmock.lib;tbb.lib;FluidEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Array1_test.cpp" />
+    <ClCompile Include="Array2_test.cpp" />
+    <ClCompile Include="Array3_test.cpp" />
+    <ClCompile Include="ArrayAccessor1_test.cpp" />
+    <ClCompile Include="ArrayAccessor2_test.cpp" />
+    <ClCompile Include="ArrayAccessor3_test.cpp" />
+    <ClCompile Include="ArrayUtils_test.cpp" />
+    <ClCompile Include="Blas_test.cpp" />
+    <ClCompile Include="BoundingBox2_test.cpp" />
+    <ClCompile Include="BoundingBox3_test.cpp" />
+    <ClCompile Include="BoundingBox_test.cpp" />
+    <ClCompile Include="Box2_test.cpp" />
+    <ClCompile Include="Box3_test.cpp" />
+    <ClCompile Include="bvh2_test.cpp" />
+    <ClCompile Include="Bvh3_test.cpp" />
+    <ClCompile Include="CellCenteredScalarGrid3_test.cpp" />
+    <ClCompile Include="CellCenteredVectorGrid2_test.cpp" />
+    <ClCompile Include="CellCenteredVectorGrid3_test.cpp" />
+    <ClCompile Include="CellCenterScalarGrid2_test.cpp" />
+    <ClCompile Include="ColliderSet2_test.cpp" />
+    <ClCompile Include="ColliderSet3_test.cpp" />
+    <ClCompile Include="CustomImplicitSurface2_test.cpp" />
+    <ClCompile Include="CustomImplicitSurface3_test.cpp" />
+    <ClCompile Include="Cylinder3_test.cpp" />
+    <ClCompile Include="FaceCenteredGrid2_test.cpp" />
+    <ClCompile Include="FaceCenteredGrid3_test.cpp" />
+    <ClCompile Include="FdmCgSolver2_test.cpp" />
+    <ClCompile Include="FdmCgSolver3_test.cpp" />
+    <ClCompile Include="FdmGaussSeidelSolver2_test.cpp" />
+    <ClCompile Include="FdmGaussSeidelSolver3_test.cpp" />
+    <ClCompile Include="FdmIccgSolver2_test.cpp" />
+    <ClCompile Include="FdmIccgSolver3_test.cpp" />
+    <ClCompile Include="FdmJocabiSolver2_test.cpp" />
+    <ClCompile Include="FdmJocabiSolver3_test.cpp" />
+    <ClCompile Include="FdmMgpcgSolver2_test.cpp" />
+    <ClCompile Include="FdmMgpcgSolver3_test.cpp" />
+    <ClCompile Include="FdmMgSolver2_test.cpp" />
+    <ClCompile Include="FdmMgSolver3_test.cpp" />
+    <ClCompile Include="FdmUtils_test.cpp" />
+    <ClCompile Include="GridBackwardEulerDiffusionSolver2_test.cpp" />
+    <ClCompile Include="GridBackwardEulerDiffusionSolver3_test.cpp" />
+    <ClCompile Include="GridBlockedBoundaryConditionSolver2_test.cpp" />
+    <ClCompile Include="GridBlockedBoundaryConditionSolver3_test.cpp" />
+    <ClCompile Include="GridForwardDiffusionSolver2_test.cpp" />
+    <ClCompile Include="GridForwardDiffusionSolver3.cpp" />
+    <ClCompile Include="GridFractionalBoundaryConditionSolver2_test.cpp" />
+    <ClCompile Include="GridFractionalBoundaryConditionSolver3_test.cpp" />
+    <ClCompile Include="GridFractionalSinglePhasePressureSolver2_test.cpp" />
+    <ClCompile Include="GridFractionalSinglePhasePressureSolver3_test.cpp" />
+    <ClCompile Include="GridSinglePhasePressureSolver2_test.cpp" />
+    <ClCompile Include="GridSinglePhasePressureSolver3_test.cpp" />
+    <ClCompile Include="ImplicitSurface2_test.cpp" />
+    <ClCompile Include="ImplicitSurface3_test.cpp" />
+    <ClCompile Include="ImplicitTriangleMesh3_test.cpp" />
+    <ClCompile Include="Logging.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MarchingCubes_test.cpp" />
+    <ClCompile Include="Matrix2x2_test.cpp" />
+    <ClCompile Include="Matrix3x3_test.cpp" />
+    <ClCompile Include="Matrix4x4_test.cpp" />
+    <ClCompile Include="MatrixCsr_test.cpp" />
+    <ClCompile Include="MatrixMxN_test.cpp" />
+    <ClCompile Include="Matrix_test.cpp" />
+    <ClCompile Include="Mg_test.cpp" />
+    <ClCompile Include="ParticleSystemSolvers_test.cpp" />
+    <ClCompile Include="PCGSolver_test.cpp" />
+    <ClCompile Include="PhysicsAnimation_ test.cpp" />
+    <ClCompile Include="Plane2_test.cpp" />
+    <ClCompile Include="Plane3_test.cpp" />
+    <ClCompile Include="Point2_test.cpp" />
+    <ClCompile Include="Point3_test.cpp" />
+    <ClCompile Include="PointHashGridSearcher2_test.cpp" />
+    <ClCompile Include="PointHashGridSearcher3_test.cpp" />
+    <ClCompile Include="PointParallelHashGridSearcher2_test.cpp" />
+    <ClCompile Include="PointParallelHashGridSearcher3_test.cpp" />
+    <ClCompile Include="PointParticleEmitter2_test.cpp" />
+    <ClCompile Include="PointParticleEmitter3_test.cpp" />
+    <ClCompile Include="Point_test.cpp" />
+    <ClCompile Include="Quaternion_test.cpp" />
+    <ClCompile Include="Sphere2_test.cpp" />
+    <ClCompile Include="Sphere3_test.cpp" />
+    <ClCompile Include="SphKernels3_test.cpp" />
+    <ClCompile Include="SphKernels2_test.cpp" />
+    <ClCompile Include="SphSolver2_test.cpp" />
+    <ClCompile Include="SphSolver3_test.cpp" />
+    <ClCompile Include="SurfaceSet2_test.cpp" />
+    <ClCompile Include="SurfaceSet3_test.cpp" />
+    <ClCompile Include="SurfaceToImplicit2_test.cpp" />
+    <ClCompile Include="SurfaceToImplicit3_test.cpp" />
+    <ClCompile Include="test_utils.cpp" />
+    <ClCompile Include="Transform2_test.cpp" />
+    <ClCompile Include="Transform3_test.cpp" />
+    <ClCompile Include="Triangle3_test.cpp" />
+    <ClCompile Include="TriangleMesh3_test.cpp" />
+    <ClCompile Include="TriangleMeshToSdf_test.cpp" />
+    <ClCompile Include="Vector2_test.cpp" />
+    <ClCompile Include="Vector3_test.cpp" />
+    <ClCompile Include="Vector4_test.cpp" />
+    <ClCompile Include="VectorN_test.cpp" />
+    <ClCompile Include="Vector_test.cpp" />
+    <ClCompile Include="VertexCenteredScalarGrid2_test.cpp" />
+    <ClCompile Include="VertexCenteredScalarGrid3_test.cpp" />
+    <ClCompile Include="VertexCenteredVectorGrid2_test.cpp" />
+    <ClCompile Include="VertexCenteredVectorGrid3_test.cpp" />
+    <ClCompile Include="VolumeParticleEmitter2_test.cpp" />
+    <ClCompile Include="VolumeParticleEmitter3_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FdmLinearSystemSolver2_test_helper.h" />
+    <ClInclude Include="FdmLinearSystemSolver3_test_helper.h" />
+    <ClInclude Include="test_utils.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
