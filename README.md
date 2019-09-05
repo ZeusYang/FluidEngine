@@ -27,6 +27,18 @@ Just clone the code and open it with Microsoft Visual Studio 2017.  There are th
 - Stable fluids-based smoke simulator
 - PIC, FLIP, and APIC fluid simulators
 - Level set-based liquid simulator
+- Position based fluid simulator
+
+
+
+## Learning Notes(In Chinese)
+
+These are not documentations for the engine but simulation algorithm notes.
+
+- [流体模拟Fluid Simulation：流体模拟基础](https://yangwc.com/2019/05/01/fluidSimulation/)
+- [流体模拟Fluid Simulation：Level Set & Marching Cube](https://yangwc.com/2019/07/30/LevelSet/)
+- [流体模拟Fluid Simulation：求解流体不可压缩的泊松方程](https://yangwc.com/2019/08/03/MakingFluidImcompressible/)
+- [流体模拟Fluid Simulation：基于SPH的拉格朗日流体模拟](https://yangwc.com/2019/08/29/SPH/)
 
 
 
