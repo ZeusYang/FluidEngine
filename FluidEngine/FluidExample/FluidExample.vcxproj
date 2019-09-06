@@ -141,18 +141,22 @@
   <ItemGroup>
     <ClCompile Include="DamBreakingPciSphFluidDemo.cpp" />
     <ClCompile Include="DamBreakingSphFluidDemo.cpp" />
+    <ClCompile Include="EulerFluidDemo.cpp" />
     <ClCompile Include="FallPciSphFluidDemo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleFluidDemo.cpp" />
+    <ClCompile Include="SmokeRisingEulerFluidDemo.cpp" />
     <ClCompile Include="WaterDropPciSphFluidDemo.cpp" />
     <ClCompile Include="WaterDropSphFluidDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DamBreakingPciSphFluidDemo.h" />
     <ClInclude Include="DamBreakingSphFluidDemo.h" />
+    <ClInclude Include="EulerFluidDemo.h" />
     <ClInclude Include="FallPciSphFluidDemo.h" />
     <ClInclude Include="FluidDemo.h" />
     <ClInclude Include="ParticleFluidDemo.h" />
+    <ClInclude Include="SmokeRisingEulerFluidDemo.h" />
     <ClInclude Include="WaterDropPciSphFluidDemo.h" />
     <ClInclude Include="WaterDropSphFluidDemo.h" />
   </ItemGroup>

@@ -254,6 +254,8 @@
     <ClCompile Include="Engine\Simulation\GridEmitter3.cpp" />
     <ClCompile Include="Engine\Simulation\GridEmitterSet2.cpp" />
     <ClCompile Include="Engine\Simulation\GridEmitterSet3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridFluidSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridFluidSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridForwardEulerDiffusionSolver2.cpp" />
     <ClCompile Include="Engine\Simulation\GridForwardEulerDiffusionSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridFractionalBoundaryConditionSolver2.cpp" />
@@ -266,6 +268,8 @@
     <ClCompile Include="Engine\Simulation\GridPressureSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridSinglePhasePressureSolver2.cpp" />
     <ClCompile Include="Engine\Simulation\GridSinglePhasePressureSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\GridSmokeSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\GridSmokeSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridSystemData2.cpp" />
     <ClCompile Include="Engine\Simulation\GridSystemData3.cpp" />
     <ClCompile Include="Engine\Simulation\ParticleEmitter2.cpp" />
@@ -481,6 +485,8 @@
     <ClInclude Include="Engine\Simulation\GridPressureSolver3.h" />
     <ClInclude Include="Engine\Simulation\GridSinglePhasePressureSolver2.h" />
     <ClInclude Include="Engine\Simulation\GridSinglePhasePressureSolver3.h" />
+    <ClInclude Include="Engine\Simulation\GridSmokeSolver2.h" />
+    <ClInclude Include="Engine\Simulation\GridSmokeSolver3.h" />
     <ClInclude Include="Engine\Simulation\GridSystemData2.h" />
     <ClInclude Include="Engine\Simulation\GridSystemData3.h" />
     <ClInclude Include="Engine\Simulation\ParticleEmitter2.h" />
@@ -532,9 +538,6 @@
     <ClInclude Include="Engine\Utils\PhysicsHelper.h" />
     <ClInclude Include="Engine\Utils\Serial.h" />
     <ClInclude Include="ManualTest\ManualTest.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

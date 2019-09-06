@@ -178,6 +178,8 @@
     <ClCompile Include="GridBackwardEulerDiffusionSolver3_test.cpp" />
     <ClCompile Include="GridBlockedBoundaryConditionSolver2_test.cpp" />
     <ClCompile Include="GridBlockedBoundaryConditionSolver3_test.cpp" />
+    <ClCompile Include="GridFluidSolver2_test.cpp" />
+    <ClCompile Include="GridFluidSolver3_test.cpp" />
     <ClCompile Include="GridForwardDiffusionSolver2_test.cpp" />
     <ClCompile Include="GridForwardDiffusionSolver3.cpp" />
     <ClCompile Include="GridFractionalBoundaryConditionSolver2_test.cpp" />

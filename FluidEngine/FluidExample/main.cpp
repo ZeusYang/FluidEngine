@@ -5,6 +5,7 @@
 #include "WaterDropPciSphFluidDemo.h"
 #include "DamBreakingPciSphFluidDemo.h"
 #include "FallPciSphFluidDemo.h"
+#include "SmokeRisingEulerFluidDemo.h"
 
 using namespace std;
 using namespace Engine;
@@ -17,23 +18,27 @@ void runDamBreakingSphFluidDemo(int numberOfFrames, double fps, const std::strin
 void runDamBreakingPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runWaterDropPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runFallPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
-
+void runSmokeRisingEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 
 int main(int argc, char *argv[])
 {
-	int numberOfFrames = 60;
+	int numberOfFrames = 500;
 	double fps = 60.0;
 	string rootDir = DESKTOP_PATH;
 
 	// Sph example.
 	//runWaterDropSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropSph/");
-	runDamBreakingSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingSph/");
+	//runDamBreakingSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingSph/");
 
 	// PciSph example.
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingPciSph/");
 	//runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
 	//runFallPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FallPciSph/");
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/test/");
+
+	// Euler example.
+	runSmokeRisingEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeEuler/");
+
 
 	return 0;
 }
@@ -81,4 +86,14 @@ void runFallPciSphFluidDemo(int numberOfFrames, double fps, const std::string &d
 		std::shared_ptr<FallPciSphFluidDemo>(new FallPciSphFluidDemo());
 	simulator->setup(targetSpacing);
 	simulator->run(dir, numberOfFrames, FORMAT, fps);
+}
+
+void runSmokeRisingEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir)
+{
+	size_t resolutionX = 50;
+	SmokeRisingEulerFluidDemo::ptr simulator =
+		std::shared_ptr<SmokeRisingEulerFluidDemo>(new SmokeRisingEulerFluidDemo());
+	simulator->setup(resolutionX);
+	simulator->run(dir, numberOfFrames, "vol", fps);
+
 }

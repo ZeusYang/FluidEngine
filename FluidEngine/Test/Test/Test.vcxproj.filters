@@ -333,6 +333,12 @@
     <ClCompile Include="GridFractionalSinglePhasePressureSolver3_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GridFluidSolver2_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GridFluidSolver3_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test_utils.h">

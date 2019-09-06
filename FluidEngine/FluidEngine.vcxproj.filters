@@ -483,6 +483,18 @@
     <ClCompile Include="Engine\Simulation\GridFractionalSinglePhasePressureSolver3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Simulation\GridFluidSolver2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Simulation\GridFluidSolver3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Simulation\GridSmokeSolver2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Simulation\GridSmokeSolver3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Utils\Constants.h">
@@ -1160,8 +1172,11 @@
     <ClInclude Include="Engine\Simulation\GridFractionalSinglePhasePressureSolver3.h">
       <Filter>头文件</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="Engine\Simulation\GridSmokeSolver2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Simulation\GridSmokeSolver3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

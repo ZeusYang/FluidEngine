@@ -9,7 +9,7 @@ namespace Engine
 	//!
 	//! This class implements 3rd-order cubic 2-D semi-Lagrangian advection solver.
 	//!
-	class CubicSemiLagrangian2 final : SemiLagrangian2
+	class CubicSemiLagrangian2 final : public SemiLagrangian2
 	{
 	public:
 		CubicSemiLagrangian2();

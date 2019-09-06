@@ -104,4 +104,7 @@ namespace Engine
 
 	};
 
+	//! Shared pointer type for the 2-D advection solver.
+	typedef std::shared_ptr<AdvectionSolver3> AdvectionSolver3Ptr;
+
 }

@@ -36,6 +36,12 @@
     <ClCompile Include="FallPciSphFluidDemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EulerFluidDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SmokeRisingEulerFluidDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluidDemo.h">
@@ -57,6 +63,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="FallPciSphFluidDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EulerFluidDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SmokeRisingEulerFluidDemo.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
