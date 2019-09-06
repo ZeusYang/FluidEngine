@@ -12,6 +12,7 @@ This is a fluid simulation engine for computer graphics applications. I adopt it
 - Intel TBB multi-threading backends
 - SPH and PCISPH fluid simulators
 - Converters between signed distance function and triangular mesh
+- Stable fluids-based smoke simulator (Pure Euler fluid solver)
 - Fluid solvers have both 2-D and 3-D version
 
 
@@ -24,7 +25,6 @@ Just clone the code and open it with Microsoft Visual Studio 2017.  There are th
 
 ## Todo
 
-- Stable fluids-based smoke simulator
 - PIC, FLIP, and APIC fluid simulators
 - Level set-based liquid simulator
 - Position based fluid simulator
