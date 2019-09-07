@@ -51,7 +51,7 @@ The engine is just for simulation and can use some renderers (such as  [Mitsuba 
 
 ![image](pictures/1.jpg)
 
-#### Euler solver Example
+#### Euler Simulation Solver Example
 
 ![image](pictures/2.jpg)
 
