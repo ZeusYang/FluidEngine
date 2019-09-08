@@ -32,8 +32,8 @@ void SmokeRisingEulerFluidDemo::setup(size_t resolutionX)
 
 	// build emitter.
 	auto box = Box3::builder()
-		.withLowerCorner({ 0.45, -1, 0.45 })
-		.withUpperCorner({ 0.55,0.05,0.55 })
+		.withLowerCorner({ 0.35, -1, 0.35 })
+		.withUpperCorner({ 0.65,0.05,0.65 })
 		.makeShared();
 
 	auto emitter = VolumeGridEmitter3::builder()
@@ -48,7 +48,7 @@ void SmokeRisingEulerFluidDemo::setup(size_t resolutionX)
 	// build collider.
 	auto sphere = Sphere3::builder()
 		.withCenter({ 0.5, 0.7, 0.5 })
-		.withRadius(0.15 * domain.width())
+		.withRadius(0.30 * domain.width())
 		.makeShared();
 	sphere->center.x;
 

@@ -22,8 +22,8 @@ void runSmokeRisingEulerFluidDemo(int numberOfFrames, double fps, const std::str
 
 int main(int argc, char *argv[])
 {
-	int numberOfFrames = 500;
-	double fps = 60.0;
+	int numberOfFrames = 240;
+	double fps = 30.0;
 	string rootDir = DESKTOP_PATH;
 
 	// Sph example.
