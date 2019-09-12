@@ -145,6 +145,7 @@
     <ClCompile Include="FallPciSphFluidDemo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleFluidDemo.cpp" />
+    <ClCompile Include="SmokeRisingDragonEulerFluidDemo.cpp" />
     <ClCompile Include="SmokeRisingEulerFluidDemo.cpp" />
     <ClCompile Include="WaterDropPciSphFluidDemo.cpp" />
     <ClCompile Include="WaterDropSphFluidDemo.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="FallPciSphFluidDemo.h" />
     <ClInclude Include="FluidDemo.h" />
     <ClInclude Include="ParticleFluidDemo.h" />
+    <ClInclude Include="SmokeRisingDragonEulerFluidDemo.h" />
     <ClInclude Include="SmokeRisingEulerFluidDemo.h" />
     <ClInclude Include="WaterDropPciSphFluidDemo.h" />
     <ClInclude Include="WaterDropSphFluidDemo.h" />

@@ -225,8 +225,7 @@ namespace Engine
 
 	//! \brief      Computes monotonic Catmull-Rom interpolation.
 	template <typename T>
-	inline T monotonicCatmullRom(const T& f0, const T& f1, const T& f2, const T& f3,
-		T t);
+	inline T monotonicCatmullRom(const T& f0, const T& f1, const T& f2, const T& f3, T t);
 
 	template <class ForwardIt, class T, class Compare = std::less<T>>
 	ForwardIt binaryFind(ForwardIt first, ForwardIt last, const T& value,

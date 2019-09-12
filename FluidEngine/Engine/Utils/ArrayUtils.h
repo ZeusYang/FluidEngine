@@ -265,66 +265,71 @@ namespace Engine
 		const ConstArrayAccessor3<T>& input,
 		const ConstArrayAccessor3<char>& valid,
 		unsigned int numberOfIterations,
-		ArrayAccessor3<T> output) {
+		ArrayAccessor3<T> output) 
+	{
 		const Size3 size = input.size();
-
 		assert(size == valid.size());
 		assert(size == output.size());
-
 		Array3<char> valid0(size);
 		Array3<char> valid1(size);
-
-		valid0.parallelForEachIndex([&](size_t i, size_t j, size_t k) {
+		valid0.parallelForEachIndex([&](size_t i, size_t j, size_t k) 
+		{
 			valid0(i, j, k) = valid(i, j, k);
 			output(i, j, k) = input(i, j, k);
 		});
-
-		for (unsigned int iter = 0; iter < numberOfIterations; ++iter) {
-			valid0.forEachIndex([&](size_t i, size_t j, size_t k) {
+		for (unsigned int iter = 0; iter < numberOfIterations; ++iter)
+		{
+			valid0.forEachIndex([&](size_t i, size_t j, size_t k) 
+			{
 				T sum = zero<T>();
 				unsigned int count = 0;
 
-				if (!valid0(i, j, k)) {
-					if (i + 1 < size.x && valid0(i + 1, j, k)) {
+				if (!valid0(i, j, k)) 
+				{
+					if (i + 1 < size.x && valid0(i + 1, j, k))
+					{
 						sum += output(i + 1, j, k);
 						++count;
 					}
 
-					if (i > 0 && valid0(i - 1, j, k)) {
+					if (i > 0 && valid0(i - 1, j, k)) 
+					{
 						sum += output(i - 1, j, k);
 						++count;
 					}
 
-					if (j + 1 < size.y && valid0(i, j + 1, k)) {
+					if (j + 1 < size.y && valid0(i, j + 1, k))
+					{
 						sum += output(i, j + 1, k);
 						++count;
 					}
 
-					if (j > 0 && valid0(i, j - 1, k)) {
+					if (j > 0 && valid0(i, j - 1, k)) 
+					{
 						sum += output(i, j - 1, k);
 						++count;
 					}
 
-					if (k + 1 < size.z && valid0(i, j, k + 1)) {
+					if (k + 1 < size.z && valid0(i, j, k + 1))
+					{
 						sum += output(i, j, k + 1);
 						++count;
 					}
 
-					if (k > 0 && valid0(i, j, k - 1)) {
+					if (k > 0 && valid0(i, j, k - 1)) 
+					{
 						sum += output(i, j, k - 1);
 						++count;
 					}
 
-					if (count > 0) {
-						output(i, j, k)
-							= sum
-							/ static_cast<typename ScalarType<T>::value>(count);
+					if (count > 0) 
+					{
+						output(i, j, k) = sum / static_cast<typename ScalarType<T>::value>(count);
 						valid1(i, j, k) = 1;
 					}
 				}
-				else {
+				else 
 					valid1(i, j, k) = 1;
-				}
 			});
 
 			valid0.swap(valid1);

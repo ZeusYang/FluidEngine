@@ -524,7 +524,8 @@ namespace Engine
 		}
 	}
 
-	const FdmVector3& GridFractionalSinglePhasePressureSolver3::pressure() const {
+	const FdmVector3& GridFractionalSinglePhasePressureSolver3::pressure() const
+	{
 		if (_mgSystemSolver == nullptr) {
 			return _system.x;
 		}
@@ -535,7 +536,8 @@ namespace Engine
 
 	void GridFractionalSinglePhasePressureSolver3::buildWeights(
 		const FaceCenteredGrid3& input, const ScalarField3& boundarySdf,
-		const VectorField3& boundaryVelocity, const ScalarField3& fluidSdf) {
+		const VectorField3& boundaryVelocity, const ScalarField3& fluidSdf) 
+	{
 		auto size = input.resolution();
 
 		// Build levels

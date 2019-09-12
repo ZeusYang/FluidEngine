@@ -50,7 +50,6 @@ void SmokeRisingEulerFluidDemo::setup(size_t resolutionX)
 		.withCenter({ 0.5, 0.7, 0.5 })
 		.withRadius(0.30 * domain.width())
 		.makeShared();
-	sphere->center.x;
 
 	auto collider = RigidBodyCollider3::builder()
 		.withSurface(sphere)

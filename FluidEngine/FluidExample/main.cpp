@@ -6,6 +6,7 @@
 #include "DamBreakingPciSphFluidDemo.h"
 #include "FallPciSphFluidDemo.h"
 #include "SmokeRisingEulerFluidDemo.h"
+#include "SmokeRisingDragonEulerFluidDemo.h"
 
 using namespace std;
 using namespace Engine;
@@ -19,10 +20,12 @@ void runDamBreakingPciSphFluidDemo(int numberOfFrames, double fps, const std::st
 void runWaterDropPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runFallPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runSmokeRisingEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
+void runSmokeRisingDragonEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
+
 
 int main(int argc, char *argv[])
 {
-	int numberOfFrames = 240;
+	int numberOfFrames = 200;
 	double fps = 30.0;
 	string rootDir = DESKTOP_PATH;
 
@@ -37,7 +40,8 @@ int main(int argc, char *argv[])
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/test/");
 
 	// Euler example.
-	runSmokeRisingEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeEuler/");
+	//runSmokeRisingEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeEuler/");
+	runSmokeRisingDragonEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeDragonEuler/");
 
 
 	return 0;
@@ -95,5 +99,13 @@ void runSmokeRisingEulerFluidDemo(int numberOfFrames, double fps, const std::str
 		std::shared_ptr<SmokeRisingEulerFluidDemo>(new SmokeRisingEulerFluidDemo());
 	simulator->setup(resolutionX);
 	simulator->run(dir, numberOfFrames, "vol", fps);
+}
 
+void runSmokeRisingDragonEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir)
+{
+	size_t resolutionX = 100;
+	SmokeRisingDragonEulerFluidDemo::ptr simulator =
+		std::shared_ptr<SmokeRisingDragonEulerFluidDemo>(new SmokeRisingDragonEulerFluidDemo());
+	simulator->setup(resolutionX);
+	simulator->run(dir, numberOfFrames, "vol", fps);
 }

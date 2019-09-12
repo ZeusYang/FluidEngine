@@ -42,6 +42,9 @@
     <ClCompile Include="SmokeRisingEulerFluidDemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="SmokeRisingDragonEulerFluidDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluidDemo.h">
@@ -69,6 +72,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SmokeRisingEulerFluidDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SmokeRisingDragonEulerFluidDemo.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
