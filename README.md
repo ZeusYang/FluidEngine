@@ -62,21 +62,27 @@ The engine is just for simulation and can use some renderers (such as  [Mitsuba 
 
 ## Reference
 
-$[1]$ Müller M, Charypar D, Gross M. Particle-based fluid simulation for interactive applications[C]//Proceedings of the 2003 ACM SIGGRAPH/Eurographics symposium on Computer animation. Eurographics Association, 2003: 154-159.
+[1]    Müller M, Charypar D, Gross M. Particle-based fluid simulation for interactive applications[C]//Proceedings of the 2003 ACM SIGGRAPH/Eurographics symposium on Computer animation. Eurographics Association, 2003: 154-159.
 
-$[2]$ Becker M, Teschner M. Weakly compressible SPH for free surface flows[C]//Proceedings of the 2007 ACM SIGGRAPH/Eurographics symposium on Computer animation. Eurographics Association, 2007: 209-217.
+[2]​    Becker M, Teschner M. Weakly compressible SPH for free surface flows[C]//Proceedings of the 2007 ACM SIGGRAPH/Eurographics symposium on Computer animation. Eurographics Association, 2007: 209-217.
 
-$[3]$ Schechter H, Bridson R. Ghost SPH for animating water[J]. ACM Transactions on Graphics (TOG), 2012, 31(4): 61.
+[3]​    Schechter H, Bridson R. Ghost SPH for animating water[J]. ACM Transactions on Graphics (TOG), 2012, 31(4): 61.
 
-$[4]$ Kim, D. (2017). *Fluid engine development*. Boca Raton: Taylor & Francis, a CRC Press, Taylor & Francis Group.
+[4]​    Kim, D. (2017). *Fluid engine development*. Boca Raton: Taylor & Francis, a CRC Press, Taylor & Francis Group.
 
-$[5]$  Adams and Wicke, Meshless approximation methods and applications in physics based modeling and animation, Eurographics tutorials 2009.
+[5]​    Adams and Wicke, Meshless approximation methods and applications in physics based modeling and animation, Eurographics tutorials 2009.
 
-$[6]$ Dan Koschier, Jan Bender. Smoothed Particle Hydrodynamics Techniques for the Physics Based Simulation of Fluids and Solids, Eurographics Tutorial 2019.
+[6]​    Dan Koschier, Jan Bender. Smoothed Particle Hydrodynamics Techniques for the Physics Based Simulation of Fluids and Solids, Eurographics Tutorial 2019.
 
-$[7]$ Solenthaler B, Pajarola R. Predictive-corrective incompressible SPH[C]// Acm Siggraph. 2009.
+[7]​    Solenthaler B, Pajarola R. Predictive-corrective incompressible SPH[C]// Acm Siggraph. 2009.
 
-$[8]$ R. Bridson and M. Müller-Fischer. Fluid simulation: Siggraph 2007 course notes. In ACM SIGGRAPH 2007 Courses, pages 1–81, ACM, 2007.
+[8]​    R. Bridson and M. Müller-Fischer. Fluid simulation: Siggraph 2007 course notes. In ACM SIGGRAPH 2007 Courses, pages 1–81, ACM, 2007.
+
+[10]  Stam J. Stable fluids[J]. Acm Transactions on Graphics, 1999, 1999:121—128.
+
+[11]  A. J. Chorin and J. E. Marsden. A Mathematical Introduction to Fluid Mechanics. Springer-Verlag. Texts in Applied Mathematics 4. Second Edition., New York, 1990.
+
+[12]  Fedkiw R, Stam J, Jensen H W. Visual simulation of smoke[C]// Conference on Computer Graphics & Interactive Techniques. 2001.
 
 
 
