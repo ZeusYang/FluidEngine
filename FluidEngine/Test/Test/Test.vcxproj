@@ -191,6 +191,8 @@
     <ClCompile Include="ImplicitSurface2_test.cpp" />
     <ClCompile Include="ImplicitSurface3_test.cpp" />
     <ClCompile Include="ImplicitTriangleMesh3_test.cpp" />
+    <ClCompile Include="LevelSetLiquidSolver_test.cpp" />
+    <ClCompile Include="LevelSetSolvers_test.cpp" />
     <ClCompile Include="Logging.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MarchingCubes_test.cpp" />

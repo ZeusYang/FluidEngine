@@ -241,7 +241,11 @@
     <ClCompile Include="Engine\Simulation\ColliderSet3.cpp" />
     <ClCompile Include="Engine\Simulation\CubicSemiLagrangian2.cpp" />
     <ClCompile Include="Engine\Simulation\CubicSemiLagrangian3.cpp" />
+    <ClCompile Include="Engine\Simulation\EnoLevelSetSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\EnoLevelSetSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\FccLatticePointGenerator.cpp" />
+    <ClCompile Include="Engine\Simulation\FmmLevelSetSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\FmmLevelSetSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridBackwardEulerDiffusionSolver2.cpp" />
     <ClCompile Include="Engine\Simulation\GridBackwardEulerDiffusionSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridBlockedBoundaryConditionSolver2.cpp" />
@@ -272,6 +276,10 @@
     <ClCompile Include="Engine\Simulation\GridSmokeSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\GridSystemData2.cpp" />
     <ClCompile Include="Engine\Simulation\GridSystemData3.cpp" />
+    <ClCompile Include="Engine\Simulation\IterativeLevelSetSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\IterativeLevelSetSolver3.cpp" />
+    <ClCompile Include="Engine\Simulation\LevelSetLiquidSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\LevelSetLiquidSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\ParticleEmitter2.cpp" />
     <ClCompile Include="Engine\Simulation\ParticleEmitter3.cpp" />
     <ClCompile Include="Engine\Simulation\ParticleEmitterSet2.cpp" />
@@ -303,6 +311,8 @@
     <ClCompile Include="Engine\Simulation\SphSystemData3.cpp" />
     <ClCompile Include="Engine\Simulation\Timer.cpp" />
     <ClCompile Include="Engine\Simulation\TrianglePointGenerator.cpp" />
+    <ClCompile Include="Engine\Simulation\UpwindLevelSetSolver2.cpp" />
+    <ClCompile Include="Engine\Simulation\UpwindLevelSetSolver3.cpp" />
     <ClCompile Include="Engine\Simulation\VolumeGridEmitter2.cpp" />
     <ClCompile Include="Engine\Simulation\VolumeGridEmitter3.cpp" />
     <ClCompile Include="Engine\Simulation\VolumeParticleEmitter2.cpp" />
@@ -458,7 +468,11 @@
     <ClInclude Include="Engine\Simulation\ColliderSet3.h" />
     <ClInclude Include="Engine\Simulation\CubicSemiLagrangian2.h" />
     <ClInclude Include="Engine\Simulation\CubicSemiLagrangian3.h" />
+    <ClInclude Include="Engine\Simulation\EnoLevelSetSolver2.h" />
+    <ClInclude Include="Engine\Simulation\EnoLevelSetSolver3.h" />
     <ClInclude Include="Engine\Simulation\FccLatticePointGenerator.h" />
+    <ClInclude Include="Engine\Simulation\FmmLevelSetSolver2.h" />
+    <ClInclude Include="Engine\Simulation\FmmLevelSetSolver3.h" />
     <ClInclude Include="Engine\Simulation\GridBackwardEulerDiffusionSolver2.h" />
     <ClInclude Include="Engine\Simulation\GridBackwardEulerDiffusionSolver3.h" />
     <ClInclude Include="Engine\Simulation\GridBlockedBoundaryConditionSolver2.h" />
@@ -489,6 +503,12 @@
     <ClInclude Include="Engine\Simulation\GridSmokeSolver3.h" />
     <ClInclude Include="Engine\Simulation\GridSystemData2.h" />
     <ClInclude Include="Engine\Simulation\GridSystemData3.h" />
+    <ClInclude Include="Engine\Simulation\IterativeLevelSetSolver2.h" />
+    <ClInclude Include="Engine\Simulation\IterativeLevelSetSolver3.h" />
+    <ClInclude Include="Engine\Simulation\LevelSetLiquidSolver2.h" />
+    <ClInclude Include="Engine\Simulation\LevelSetLiquidSolver3.h" />
+    <ClInclude Include="Engine\Simulation\LevelSetSolver2.h" />
+    <ClInclude Include="Engine\Simulation\LevelSetSolver3.h" />
     <ClInclude Include="Engine\Simulation\ParticleEmitter2.h" />
     <ClInclude Include="Engine\Simulation\ParticleEmitter3.h" />
     <ClInclude Include="Engine\Simulation\ParticleEmitterSet2.h" />
@@ -523,6 +543,8 @@
     <ClInclude Include="Engine\Simulation\SphSystemData3.h" />
     <ClInclude Include="Engine\Simulation\Timer.h" />
     <ClInclude Include="Engine\Simulation\TrianglePointGenerator.h" />
+    <ClInclude Include="Engine\Simulation\UpwindLevelSetSolver2.h" />
+    <ClInclude Include="Engine\Simulation\UpwindLevelSetSolver3.h" />
     <ClInclude Include="Engine\Simulation\VolumeGridEmitter2.h" />
     <ClInclude Include="Engine\Simulation\VolumeParticleEmitter2.h" />
     <ClInclude Include="Engine\Simulation\VolumeParticleEmitter3.h" />
@@ -535,6 +557,7 @@
     <ClInclude Include="Engine\Utils\Macros.h" />
     <ClInclude Include="Engine\Utils\MathUtils.h" />
     <ClInclude Include="Engine\Utils\Parallel.h" />
+    <ClInclude Include="Engine\Utils\PdeUtils.h" />
     <ClInclude Include="Engine\Utils\PhysicsHelper.h" />
     <ClInclude Include="Engine\Utils\Serial.h" />
     <ClInclude Include="ManualTest\ManualTest.h" />

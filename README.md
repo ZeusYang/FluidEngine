@@ -13,6 +13,7 @@ This is a fluid simulation engine for computer graphics applications. I adopt it
 - SPH and PCISPH fluid simulators
 - Converters between signed distance function and triangular mesh
 - Stable fluids-based smoke simulator (Pure Euler fluid solver)
+- Level set-based liquid simulator
 - Fluid solvers have both 2-D and 3-D version
 
 
@@ -26,7 +27,6 @@ Just clone the code and open it with Microsoft Visual Studio 2017.  There are th
 ## Todo
 
 - PIC, FLIP, and APIC fluid simulators
-- Level set-based liquid simulator
 - Position based fluid simulator
 - ......
 
@@ -57,6 +57,10 @@ The engine is just for simulation and can use some renderers (such as  [Mitsuba 
 #### Euler Simulation Solver Example
 
 ![image](pictures/2.jpg)
+
+#### Level-set  based liquid example
+
+![image](pictures/3.jpg)
 
 
 

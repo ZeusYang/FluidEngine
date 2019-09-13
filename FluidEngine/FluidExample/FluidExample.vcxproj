@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BunnyDropEulerLiquidDemo.cpp" />
     <ClCompile Include="DamBreakingPciSphFluidDemo.cpp" />
     <ClCompile Include="DamBreakingSphFluidDemo.cpp" />
     <ClCompile Include="EulerFluidDemo.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="WaterDropSphFluidDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BunnyDropEulerLiquidDemo.h" />
     <ClInclude Include="DamBreakingPciSphFluidDemo.h" />
     <ClInclude Include="DamBreakingSphFluidDemo.h" />
     <ClInclude Include="EulerFluidDemo.h" />

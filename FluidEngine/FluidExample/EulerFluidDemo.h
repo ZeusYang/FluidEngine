@@ -31,6 +31,8 @@ protected:
 
 	void saveAsSmokeXml(const Engine::ScalarGrid3Ptr &density,const std::string &rootDir, int frameCnt);
 
+	void saveAsLiquidXml(const Engine::ScalarGrid3Ptr &sdf, const std::string &rootDir, int frameCnt);
+
 	float smoothStep(float edge0, float edge1, float x);
 
 };
