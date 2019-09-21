@@ -61,7 +61,7 @@ The engine is just for simulation and can use some renderers (such as  [Mitsuba 
 
 ![image](pictures/2.jpg)
 
-#### Level-set  based liquid example
+#### Level-set Based Liquid Example
 
 ![image](pictures/3.jpg)
 
