@@ -436,6 +436,10 @@ namespace Engine
 
 	};
 
+
+
+	//! ----------------------------------------------Definition----------------------------------------
+
 	template <typename T, size_t M, size_t N>
 	Matrix<T, M, N>::Matrix() 
 	{

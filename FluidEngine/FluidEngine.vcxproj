@@ -94,6 +94,12 @@
       <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>tbb.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -109,6 +115,12 @@
       <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>tbb.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -127,6 +139,12 @@
       <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>tbb.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -147,6 +165,12 @@
       <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>tbb.lib;tbb_debug.lib;gtest.lib;gmock.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Geometry\AnisotropicPointsToImplicit2.cpp" />
@@ -319,6 +343,15 @@
     <ClCompile Include="Engine\Simulation\VolumeParticleEmitter3.cpp" />
     <ClCompile Include="Engine\Utils\FdmUtils.cpp" />
     <ClCompile Include="Engine\Utils\Logging.cpp" />
+    <ClCompile Include="Engine\Visualizer\ColorUtils.cpp" />
+    <ClCompile Include="Engine\Visualizer\Event.cpp" />
+    <ClCompile Include="Engine\Visualizer\InputEvents.cpp" />
+    <ClCompile Include="Engine\Visualizer\RenderParameters.cpp" />
+    <ClCompile Include="Engine\Visualizer\Shader.cpp" />
+    <ClCompile Include="Engine\Visualizer\Texture2.cpp" />
+    <ClCompile Include="Engine\Visualizer\Texture3.cpp" />
+    <ClCompile Include="Engine\Visualizer\Vertex.cpp" />
+    <ClCompile Include="Engine\Visualizer\Viewport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Geometry\AnisotropicPointsToImplicit2.h" />
@@ -401,6 +434,7 @@
     <ClInclude Include="Engine\Math\ArraySamplers.h" />
     <ClInclude Include="Engine\Math\ArraySamplers2.h" />
     <ClInclude Include="Engine\Math\ArraySamplers3.h" />
+    <ClInclude Include="Engine\Math\ArrayView.h" />
     <ClInclude Include="Engine\Math\Blas.h" />
     <ClInclude Include="Engine\Math\ConstantScalarField2.h" />
     <ClInclude Include="Engine\Math\ConstantScalarField3.h" />
@@ -560,6 +594,19 @@
     <ClInclude Include="Engine\Utils\PdeUtils.h" />
     <ClInclude Include="Engine\Utils\PhysicsHelper.h" />
     <ClInclude Include="Engine\Utils\Serial.h" />
+    <ClInclude Include="Engine\Visualizer\ColorUtils.h" />
+    <ClInclude Include="Engine\Visualizer\Common.h" />
+    <ClInclude Include="Engine\Visualizer\Event.h" />
+    <ClInclude Include="Engine\Visualizer\GLCommon.h" />
+    <ClInclude Include="Engine\Visualizer\InputEvents.h" />
+    <ClInclude Include="Engine\Visualizer\PrimitiveTypes.h" />
+    <ClInclude Include="Engine\Visualizer\RenderParameters.h" />
+    <ClInclude Include="Engine\Visualizer\Shader.h" />
+    <ClInclude Include="Engine\Visualizer\Texture.h" />
+    <ClInclude Include="Engine\Visualizer\Texture2.h" />
+    <ClInclude Include="Engine\Visualizer\Texture3.h" />
+    <ClInclude Include="Engine\Visualizer\Vertex.h" />
+    <ClInclude Include="Engine\Visualizer\Viewport.h" />
     <ClInclude Include="ManualTest\ManualTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

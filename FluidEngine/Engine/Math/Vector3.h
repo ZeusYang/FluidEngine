@@ -263,6 +263,9 @@ namespace Engine
 	template <typename T>
 	using Vector3 = Vector<T, 3>;
 
+	using Vector3F = Vector3<float>;
+	using Vector3D = Vector3<double>;
+
 	//! Positive sign operator.
 	template <typename T>
 	Vector3<T> operator+(const Vector3<T>& a);

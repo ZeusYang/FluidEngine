@@ -482,11 +482,8 @@ namespace Engine
 
 	};
 
-	//! Float-type M x N matrix.
-	typedef MatrixMxN<float> MatrixMxNF;
-
-	//! Double-type M x N matrix.
-	typedef MatrixMxN<double> MatrixMxND;
+	using MatrixMxNF = MatrixMxN<float>;
+	using MatrixMxND = MatrixMxN<double>;
 
 	//! ------------------------------Definition------------------------------
 

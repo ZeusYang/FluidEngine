@@ -395,10 +395,18 @@ namespace Engine
 	};
 
 	//! Float-type N-D vector.
-	typedef VectorN<float> VectorNF;
-
-	//! Double-type N-D vector.
-	typedef VectorN<double> VectorND;
+	using VectorNB = VectorN<int8_t>;
+	using VectorNUB = VectorN<uint8_t>;
+	using VectorNS = VectorN<int16_t>;
+	using VectorNUS = VectorN<uint16_t>;
+	using VectorNI = VectorN<int32_t>;
+	using VectorNUI = VectorN<uint32_t>;
+	using VectorNL = VectorN<int64_t>;
+	using VectorNUL = VectorN<uint64_t>;
+	using VectorNF = VectorN<float>;
+	using VectorND = VectorN<double>;
+	using VectorNZ = VectorN<ssize_t>;
+	using VectorNUZ = VectorN<size_t>;
 
 	// MARK: VectorN
 
