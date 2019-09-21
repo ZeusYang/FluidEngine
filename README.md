@@ -28,8 +28,9 @@ Just clone the code and open it with Microsoft Visual Studio 2017.  There are th
 
 - PIC, FLIP, and APIC fluid simulators
 - Position based fluid simulator
-- OpenGL visualizer
+- Visualizer based on OpenGL
 - Flame simulator
+- GPU version of SPH Simulator
 - ......
 
 
