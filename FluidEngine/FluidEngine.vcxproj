@@ -202,6 +202,7 @@
     <ClCompile Include="Engine\Geometry\PointsToImplicit3.cpp" />
     <ClCompile Include="Engine\Geometry\ScalarGrid2.cpp" />
     <ClCompile Include="Engine\Geometry\ScalarGrid3.cpp" />
+    <ClCompile Include="Engine\Geometry\SolenthalerPointsToImplicit3.cpp" />
     <ClCompile Include="Engine\Geometry\Sphere2.cpp" />
     <ClCompile Include="Engine\Geometry\Sphere3.cpp" />
     <ClCompile Include="Engine\Geometry\SphericalPointsToImplicit2.cpp" />
@@ -397,6 +398,7 @@
     <ClInclude Include="Engine\Geometry\Ray3.h" />
     <ClInclude Include="Engine\Geometry\ScalarGrid2.h" />
     <ClInclude Include="Engine\Geometry\ScalarGrid3.h" />
+    <ClInclude Include="Engine\Geometry\SolenthalerPointsToImplicit3.h" />
     <ClInclude Include="Engine\Geometry\Sphere2.h" />
     <ClInclude Include="Engine\Geometry\Sphere3.h" />
     <ClInclude Include="Engine\Geometry\SphericalPointsToImplicit2.h" />

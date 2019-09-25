@@ -180,8 +180,7 @@ namespace Engine
 
 		const Vector3D gridSpacing = sdf->gridSpacing();
 		const double h = max3(gridSpacing.x, gridSpacing.y, gridSpacing.z);
-		const double maxDist
-			= std::max(2.0 * currentCfl, _minReinitializeDistance) * h;
+		const double maxDist = std::max(2.0 * currentCfl, _minReinitializeDistance) * h;
 
 		std::cout << "Max velocity extrapolation distance: " << maxDist << std::endl;
 

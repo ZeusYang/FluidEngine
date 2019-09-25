@@ -28,7 +28,7 @@ void runBunnyDropEulerFluidDemo(int numberOfFrames, double fps, const std::strin
 int main(int argc, char *argv[])
 {
 	int numberOfFrames = 120;
-	double fps = 60.0;
+	double fps = 30.0;
 	string rootDir = DESKTOP_PATH;
 
 	// Sph example.
@@ -37,14 +37,14 @@ int main(int argc, char *argv[])
 
 	// PciSph example.
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingPciSph/");
-	//runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
+	runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
 	//runFallPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FallPciSph/");
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/test/");
 
 	// Euler example.
 	//runSmokeRisingEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeEuler/");
 	//runSmokeRisingDragonEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeDragonEuler/");
-	runBunnyDropEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/BunnyDropEuler/");
+	//runBunnyDropEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/BunnyDropEuler/");
 
 	return 0;
 }

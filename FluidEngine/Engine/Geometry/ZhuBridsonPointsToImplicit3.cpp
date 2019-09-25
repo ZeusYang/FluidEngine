@@ -39,10 +39,12 @@ namespace Engine
 		const double isoContValue = _cutOffThreshold * _kernelRadius;
 
 		auto temp = output->clone();
-		temp->fill([&](const Vector3D& x) -> double {
+		temp->fill([&](const Vector3D& x) -> double 
+		{
 			Vector3D xAvg;
 			double wSum = 0.0;
-			const auto func = [&](size_t, const Vector3D& xi) {
+			const auto func = [&](size_t, const Vector3D& xi) 
+			{
 				const double wi = k((x - xi).length() / _kernelRadius);
 				wSum += wi;
 				xAvg += wi * xi;

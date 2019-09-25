@@ -10,6 +10,8 @@
 #include "Engine/Geometry/MarchingCubes.h"
 #include "Engine/Simulation/SphSystemData3.h"
 #include "Engine/Geometry/SphPointsToImplicit3.h"
+#include "Engine/Geometry/SolenthalerPointsToImplicit3.h"
+#include "Engine/Geometry/ZhuBridsonPointsToImplicit3.h"
 #include "Engine/Geometry/VertexCenteredScalarGrid3.h"
 
 using namespace Engine;
@@ -46,7 +48,13 @@ void ParticleFluidDemo::saveParticleAsObj(const Engine::ParticleSystemData3Ptr &
 	// convert to implicit surface.
 	PointsToImplicit3Ptr converter;
 	SphSystemData3 *data = reinterpret_cast<SphSystemData3*>(particles.get());
-	converter = std::make_shared<SphPointsToImplicit3>(data->kernelRadius(), _sphCutOffDensity, false);
+
+	double sZhuBridsonCutOffThreshold = 0.25;
+
+	//converter = std::make_shared<SphPointsToImplicit3>(data->kernelRadius(), _sphCutOffDensity, false);
+	//converter = std::make_shared<ZhuBridsonPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
+	converter = std::make_shared<SolenthalerPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
+
 	VertexCenteredScalarGrid3 sdf(_resolution, Vector3D({ particles->radius(),particles->radius(),particles->radius() }),
 		_origin);
 	converter->convert(particles->positions(), &sdf);

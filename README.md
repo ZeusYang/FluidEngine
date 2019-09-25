@@ -45,7 +45,7 @@ These are not documentations for the engine but simulation algorithm notes.
 - [流体模拟Fluid Simulation：基于SPH的拉格朗日流体模拟](https://yangwc.com/2019/08/29/SPH/)
 - [流体模拟Fluid Simulation：基于欧拉网格的流体模拟](https://yangwc.com/2019/09/12/Smoke/)
 
-
+- [流体模拟Fluid Simulation：Free-Surface Flow](https://yangwc.com/2019/09/22/FreeSurfaceFlow/)
 
 
 

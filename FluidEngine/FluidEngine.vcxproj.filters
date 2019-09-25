@@ -552,6 +552,9 @@
     <ClCompile Include="Engine\Visualizer\Texture3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Geometry\SolenthalerPointsToImplicit3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Utils\Constants.h">
@@ -1314,6 +1317,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Math\ArrayView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Geometry\SolenthalerPointsToImplicit3.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
