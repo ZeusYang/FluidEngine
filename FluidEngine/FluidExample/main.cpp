@@ -8,11 +8,12 @@
 #include "SmokeRisingEulerFluidDemo.h"
 #include "BunnyDropEulerLiquidDemo.h"
 #include "SmokeRisingDragonEulerFluidDemo.h"
+#include "FluidPipeDropPciSphFluidDemo.h"
 
 using namespace std;
 using namespace Engine;
 
-#define FORMAT "obj"
+#define FORMAT "xyz"
 #define DESKTOP_PATH "C:/Users/ywc/Desktop"
 
 void runWaterDropSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
@@ -23,11 +24,12 @@ void runFallPciSphFluidDemo(int numberOfFrames, double fps, const std::string &d
 void runSmokeRisingEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runSmokeRisingDragonEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runBunnyDropEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
+void runFluidPipeDropPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 
 
 int main(int argc, char *argv[])
 {
-	int numberOfFrames = 120;
+	int numberOfFrames = 81;
 	double fps = 30.0;
 	string rootDir = DESKTOP_PATH;
 
@@ -40,6 +42,7 @@ int main(int argc, char *argv[])
 	runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
 	//runFallPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FallPciSph/");
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/test/");
+	//runFluidPipeDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FluidPipe/");
 
 	// Euler example.
 	//runSmokeRisingEulerFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/SmokeEuler/");
@@ -118,4 +121,13 @@ void runBunnyDropEulerFluidDemo(int numberOfFrames, double fps, const std::strin
 	BunnyDropEulerLiquidDemo::ptr simulator = std::shared_ptr<BunnyDropEulerLiquidDemo>(new BunnyDropEulerLiquidDemo());
 	simulator->setup(resolutionX);
 	simulator->run(dir, numberOfFrames, "obj", fps);
+}
+
+void runFluidPipeDropPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir)
+{
+	double targetSpacing = 0.02;
+	FluidPipeDropPciSphFluidDemo::ptr simulator =
+		std::shared_ptr<FluidPipeDropPciSphFluidDemo>(new FluidPipeDropPciSphFluidDemo());
+	simulator->setup(targetSpacing);
+	simulator->run(dir, numberOfFrames, FORMAT, fps);
 }

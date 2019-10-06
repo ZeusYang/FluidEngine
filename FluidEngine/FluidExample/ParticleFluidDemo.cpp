@@ -52,8 +52,8 @@ void ParticleFluidDemo::saveParticleAsObj(const Engine::ParticleSystemData3Ptr &
 	double sZhuBridsonCutOffThreshold = 0.25;
 
 	//converter = std::make_shared<SphPointsToImplicit3>(data->kernelRadius(), _sphCutOffDensity, false);
-	//converter = std::make_shared<ZhuBridsonPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
-	converter = std::make_shared<SolenthalerPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
+	converter = std::make_shared<ZhuBridsonPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
+	//converter = std::make_shared<SolenthalerPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
 
 	VertexCenteredScalarGrid3 sdf(_resolution, Vector3D({ particles->radius(),particles->radius(),particles->radius() }),
 		_origin);
@@ -253,10 +253,82 @@ void ParticleFluidDemo::saveParticleAsXyz(const Engine::ParticleSystemData3Ptr &
 	if(file)
 	{
 		std::cout << "Writing " << filename << "...\n";
+		// bounding box.
+		file << minX << ' ' << minY << ' ' << minZ << std::endl;
+		file << maxX << ' ' << maxY << ' ' << maxZ << std::endl;
+		// kernel radius.
+		file << reinterpret_cast<SphSystemData3*>(particles.get())->kernelRadius() << std::endl;
+		// particle radius.
+		file << particles->radius() * 0.5 << std::endl;
+		// particle positions.
 		for (const auto &pt : positions)
 			file << pt.x << ' ' << pt.y << ' ' << pt.z << std::endl;
 		file.close();
 	}
 	else 
 		std::cout << "Failed to save the file:" << filename << std::endl;
+
+	char baseObjName[256];
+	snprintf(baseObjName, sizeof(baseObjName), "frame_%06d.obj", frameCnt);
+	std::string objName = std::string(baseObjName);
+
+	// writing the xml file.
+	snprintf(basename, sizeof(basename), "frame_%06d.xml", frameCnt);
+	filename = rootDir + std::string(basename);
+	std::ofstream xmlfile(filename.c_str());
+	// calculate camera.
+	double midX = (maxX + minX) / 2;
+	double midY = minY + (maxY - minY) * 0.3;
+	double midZ = (maxZ + minZ) / 2;
+	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 2.3;
+	Vector3D target({ midX, midY, midZ });
+	Vector3D origin({ 0.3,0.5,1 });
+	origin.normalize();
+	origin = origin * longest + target;
+	if (xmlfile)
+	{
+		std::cout << "Writing " << filename << "...\n";
+		xmlfile << "<scene version=\"0.5.0\">";
+		xmlfile << "<integrator type=\"volpath_simple\">";
+		xmlfile << "<integer name=\"maxDepth\" value=\"20\"/>";
+		xmlfile << "</integrator>";
+		xmlfile << "<sensor type=\"perspective\">";
+		xmlfile << "<transform name=\"toWorld\">\n";
+		xmlfile << "<lookat target=\"" << target.x << "," << target.y << "," << target.z
+			<< "\" origin=\"" << origin.x << "," << origin.y << "," << origin.z
+			<< "\" up=\"" << 0.0 << "," << 1.0 << "," << 0.0 << "\"/>\n";
+		xmlfile << "</transform>";
+		xmlfile << "<sampler type=\"ldsampler\">";
+		xmlfile << "<integer name=\"sampleCount\" value=\"512\"/>";
+		xmlfile << "</sampler>";
+		xmlfile << "<film type=\"ldrfilm\">";
+		xmlfile << "<integer name=\"width\" value=\"800\"/>";
+		xmlfile << "<integer name=\"height\" value=\"600\"/>";
+		xmlfile << "<string name=\"pixelFormat\" value=\"rgb\"/>";
+		xmlfile << "</film>";
+		xmlfile << "</sensor>";
+		xmlfile << _sceneXml;
+		xmlfile << "<emitter type=\"envmap\" id=\"envmapLight\">";
+		xmlfile << "<string name=\"filename\" value=\"../envmap.exr\"/>";
+		xmlfile << "<transform name=\"toWorld\">";
+		xmlfile << "</transform>";
+		xmlfile << "<float name=\"scale\" value=\"2.75\"/>";
+		xmlfile << "</emitter>";
+		xmlfile << "<shape type=\"obj\" id=\"water\">";
+		xmlfile << "<string name=\"filename\" value=\"" << objName << "\"/>";
+		xmlfile << "<bsdf type=\"dielectric\">";
+		xmlfile << "<float name=\"intIOR\" value=\"1.33\"/>";
+		xmlfile << "<float name=\"extIOR\" value=\"1.0\"/>";
+		xmlfile << "</bsdf>";
+		xmlfile << "<medium name=\"interior\" type=\"homogeneous\">";
+		xmlfile << "<rgb name=\"sigmaS\" value=\"0, 0, 0\"/>";
+		xmlfile << "<rgb name=\"sigmaA\" value=\"4, 1.7, 1.5\"/>";
+		xmlfile << "</medium>";
+		xmlfile << "</shape>";
+		xmlfile << "</scene>";
+		xmlfile.close();
+	}
+	else
+		std::cout << "Failed to save the file:" << filename << std::endl;
+
 }

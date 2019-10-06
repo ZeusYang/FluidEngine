@@ -21,9 +21,6 @@
     <ClCompile Include="Array1_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Logging.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Array2_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

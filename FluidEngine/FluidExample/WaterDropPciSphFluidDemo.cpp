@@ -16,10 +16,6 @@ using namespace Engine;
 
 void WaterDropPciSphFluidDemo::setup(double radius)
 {
-	minX = minY = minZ = 0.0;
-	maxX = 1;
-	maxY = 2;
-	maxZ = 1;
 
 	std::stringstream ss;
 	ss << "<texture type=\"checkerboard\" id=\"__planetex\">";
@@ -42,6 +38,15 @@ void WaterDropPciSphFluidDemo::setup(double radius)
 	_sceneXml = ss.str();
 
 	BoundingBox3D domain(Vector3D(), Vector3D(1, 2, 1));
+	
+	BoundingBox3D another = domain;
+	another.expand(2 * radius);
+	minX = another.lowerCorner.x;
+	minY = another.lowerCorner.y;
+	minZ = another.lowerCorner.z;
+	maxX = another.upperCorner.x;
+	maxY = another.upperCorner.y;
+	maxZ = another.upperCorner.z;
 
 	_origin = Vector3D(minX, minY, minZ);
 	_resolution = Size3(domain.width() / radius + 5, domain.height() / radius + 5, domain.depth() / radius + 5);

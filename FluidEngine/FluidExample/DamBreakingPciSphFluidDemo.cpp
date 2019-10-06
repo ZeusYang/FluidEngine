@@ -17,12 +17,15 @@ using namespace Engine;
 void DamBreakingPciSphFluidDemo::setup(double radius)
 {
 	BoundingBox3D domain(Vector3D(), Vector3D(3, 2, 1.5));
-	minX = domain.lowerCorner.x;
-	minY = domain.lowerCorner.y;
-	minZ = domain.lowerCorner.z;
-	maxX = domain.upperCorner.x;
-	maxY = domain.upperCorner.y;
-	maxZ = domain.upperCorner.z;
+
+	BoundingBox3D another = domain;
+	another.expand(2 * radius);
+	minX = another.lowerCorner.x;
+	minY = another.lowerCorner.y;
+	minZ = another.lowerCorner.z;
+	maxX = another.upperCorner.x;
+	maxY = another.upperCorner.y;
+	maxZ = another.upperCorner.z;
 
 	double lz = domain.depth();
 
