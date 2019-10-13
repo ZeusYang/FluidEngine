@@ -1322,5 +1322,8 @@
     <ClInclude Include="Engine\Geometry\SolenthalerPointsToImplicit3.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Math\SingularValueDecomposition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

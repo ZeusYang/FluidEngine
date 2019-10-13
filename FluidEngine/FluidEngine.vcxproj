@@ -483,6 +483,7 @@
     <ClInclude Include="Engine\Math\Samplers.h" />
     <ClInclude Include="Engine\Math\ScalarField2.h" />
     <ClInclude Include="Engine\Math\ScalarField3.h" />
+    <ClInclude Include="Engine\Math\SingularValueDecomposition.h" />
     <ClInclude Include="Engine\Math\Size.h" />
     <ClInclude Include="Engine\Math\Size2.h" />
     <ClInclude Include="Engine\Math\Size3.h" />

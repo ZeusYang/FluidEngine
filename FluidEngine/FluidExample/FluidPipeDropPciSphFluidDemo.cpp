@@ -18,7 +18,7 @@ using namespace Engine;
 
 void FluidPipeDropPciSphFluidDemo::setup(double radius)
 {
-	BoundingBox3D domain(Vector3D(-1.5, 0.0, -1.0), Vector3D(+1.5, 5.0, 1.0));
+	BoundingBox3D domain(Vector3D(-2.0, 0.0, -2.0), Vector3D(+2.0, 6.0, 2.0));
 
 	BoundingBox3D another = domain;
 	another.expand(2 * radius);
@@ -40,15 +40,15 @@ void FluidPipeDropPciSphFluidDemo::setup(double radius)
 		.withTargetSpacing(radius)
 		.makeShared();
 	solver->setPseudoViscosityCoefficient(0.0);
-	solver->setTimeStepLimitScale(2.0);
+	solver->setTimeStepLimitScale(4.0);
 
 	// Build emitter.
 	BoundingBox3D sourceBound(domain);
 	sourceBound.expand(-radius);
 	auto cylinder = Cylinder3::builder()
-		.withCenter({ 0, 3.0, 0 })
-		.withRadius(0.3)
-		.withHeight(4.0)
+		.withCenter({ 0, 3.8, 0 })
+		.withRadius(0.8)
+		.withHeight(1.8)
 		.makeShared();
 	auto emitter = VolumeParticleEmitter3::builder()
 		.withSurface(cylinder)
@@ -61,7 +61,7 @@ void FluidPipeDropPciSphFluidDemo::setup(double radius)
 
 	// Build collider.
 	auto dragonMesh = TriangleMesh3::builder().makeShared();
-	std::ifstream objFile("dragon.obj");
+	std::ifstream objFile("bunny.obj");
 	if (objFile)
 		dragonMesh->readObj(&objFile);
 	else
@@ -115,9 +115,9 @@ void FluidPipeDropPciSphFluidDemo::setup(double radius)
 
 	// cyl1
 	ss << "<shape type=\"obj\">";
-	ss << "<string name=\"filename\" value=\"dragon.obj\"/>";
+	ss << "<string name=\"filename\" value=\"bunny.obj\"/>";
 	ss << "<bsdf type=\"diffuse\">";
-	ss << "<rgb name=\"diffuseReflectance\" value=\".0, .0, .9\"/>";
+	ss << "<rgb name=\"diffuseReflectance\" value=\".9, .9, .9\"/>";
 	ss << "</bsdf>";
 	ss << "</shape>";
 

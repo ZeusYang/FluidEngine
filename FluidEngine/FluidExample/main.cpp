@@ -29,7 +29,7 @@ void runFluidPipeDropPciSphFluidDemo(int numberOfFrames, double fps, const std::
 
 int main(int argc, char *argv[])
 {
-	int numberOfFrames = 81;
+	int numberOfFrames = 120;
 	double fps = 30.0;
 	string rootDir = DESKTOP_PATH;
 
@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
 	//runDamBreakingSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingSph/");
 
 	// PciSph example.
-	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingPciSph/");
-	runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
+	runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingPciSph/");
+	//runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
 	//runFallPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FallPciSph/");
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/test/");
 	//runFluidPipeDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FluidPipe/");

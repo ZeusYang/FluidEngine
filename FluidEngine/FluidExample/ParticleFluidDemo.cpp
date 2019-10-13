@@ -246,6 +246,7 @@ void ParticleFluidDemo::saveParticleAsXyz(const Engine::ParticleSystemData3Ptr &
 {
 	Array1<Vector3D> positions(particles->numberOfParticles());
 	copyRange1(particles->positions(), particles->numberOfParticles(), &positions);
+	const auto densities = reinterpret_cast<SphSystemData3*>(particles.get())->densities();
 	char basename[256];
 	snprintf(basename, sizeof(basename), "frame_%06d.xyz", frameCnt);
 	std::string filename = rootDir + basename;
@@ -260,9 +261,13 @@ void ParticleFluidDemo::saveParticleAsXyz(const Engine::ParticleSystemData3Ptr &
 		file << reinterpret_cast<SphSystemData3*>(particles.get())->kernelRadius() << std::endl;
 		// particle radius.
 		file << particles->radius() * 0.5 << std::endl;
+		// particle mass.
+		file << particles->mass() << std::endl;
 		// particle positions.
-		for (const auto &pt : positions)
-			file << pt.x << ' ' << pt.y << ' ' << pt.z << std::endl;
+		for (size_t i = 0; i < positions.size(); ++i)
+			file << positions[i].x << ' ' << positions[i].y << ' ' << positions[i].z << ' ' << densities[i] << std::endl;
+		//for (const auto &pt : positions)
+		//	file << pt.x << ' ' << pt.y << ' ' << pt.z << std::endl;
 		file.close();
 	}
 	else 
