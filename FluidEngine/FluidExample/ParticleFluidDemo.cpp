@@ -10,6 +10,7 @@
 #include "Engine/Geometry/MarchingCubes.h"
 #include "Engine/Simulation/SphSystemData3.h"
 #include "Engine/Geometry/SphPointsToImplicit3.h"
+#include "Engine/Geometry/AnisotropicPointsToImplicit3.h"
 #include "Engine/Geometry/SolenthalerPointsToImplicit3.h"
 #include "Engine/Geometry/ZhuBridsonPointsToImplicit3.h"
 #include "Engine/Geometry/VertexCenteredScalarGrid3.h"
@@ -52,8 +53,10 @@ void ParticleFluidDemo::saveParticleAsObj(const Engine::ParticleSystemData3Ptr &
 	double sZhuBridsonCutOffThreshold = 0.25;
 
 	//converter = std::make_shared<SphPointsToImplicit3>(data->kernelRadius(), _sphCutOffDensity, false);
-	converter = std::make_shared<ZhuBridsonPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
+	//converter = std::make_shared<ZhuBridsonPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
 	//converter = std::make_shared<SolenthalerPointsToImplicit3>(data->kernelRadius(), sZhuBridsonCutOffThreshold, false);
+	converter = std::make_shared<AnisotropicPointsToImplicit3>(data->kernelRadius(), 0.5, 0.5, 25, false);
+
 
 	VertexCenteredScalarGrid3 sdf(_resolution, Vector3D({ particles->radius(),particles->radius(),particles->radius() }),
 		_origin);

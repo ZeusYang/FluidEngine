@@ -1,5 +1,6 @@
 #include "SolenthalerPointsToImplicit3.h"
 
+#include "../Math/SingularValueDecomposition.h"
 #include "../Simulation/ParticleSystemData3.h"
 
 namespace Engine
@@ -67,10 +68,9 @@ namespace Engine
 		ParticleSystemData3 particles;
 		particles.addParticles(points);
 		particles.buildNeighborSearcher(_kernelRadius);
-
+		//£¡ it's improved based on Zhu and Bridson's method.
 		const auto neighborSearcher = particles.neighborSearcher();
 		const double isoContValue = _cutOffThreshold * _kernelRadius;
-
 		auto temp = output->clone();
 		temp->fill([&](const Vector3D& x) -> double
 		{
@@ -148,10 +148,17 @@ namespace Engine
 			dy3_dy = (-1) * 1.0 / square(wSum) * wGradY * wZSum + 1.0 / wSum * zGradY_sum;
 			dy3_dz = (-1) * 1.0 / square(wSum) * wGradZ * wZSum + 1.0 / wSum * w_plus_zGradZ_sum;
 
-			double largestEigenValue = calculateLargestEigenValue(
-				dy1_dx, dy1_dy, dy1_dz,
-				dy2_dx, dy2_dy, dy2_dz,
-				dy3_dx, dy3_dy, dy3_dz);
+			Matrix3x3D cov;
+			cov.set(dy1_dx, dy1_dy, dy1_dz, dy2_dx, dy2_dy, dy2_dz,dy3_dx, dy3_dy, dy3_dz);
+
+			// SVD
+			Matrix3x3D u;
+			Vector3D v;
+			Matrix3x3D w;
+			svd(cov, u, v, w);
+
+			//! largest eigenvalue of Jacobi matrix.
+			double largestEigenValue = v.max();
 
 			double fValue = f(largestEigenValue, 0.4, 3.5);
 
@@ -172,53 +179,4 @@ namespace Engine
 		temp->swap(output);
 	}
 
-	double SolenthalerPointsToImplicit3::calculateLargestEigenValue(
-		double dy1_dx, double dy1_dy, double dy1_dz,
-		double dy2_dx, double dy2_dy, double dy2_dz,
-		double dy3_dx, double dy3_dy, double dy3_dz) const
-	{
-		double traceA = dy1_dx + dy2_dy + dy3_dz;
-		double traceA_2 = 
-			dy1_dx * dy1_dx + dy2_dx * dy1_dy + dy3_dx * dy1_dz +
-			dy1_dy * dy2_dx + dy2_dy * dy2_dy + dy3_dy * dy2_dz +
-			dy1_dz * dy3_dx + dy2_dz * dy3_dy + dy3_dz * dy3_dz;
-
-		double a, b, c, d;
-		a = 1.0;
-		b = -traceA;
-		c = -0.5 * (traceA_2 - square(traceA));
-		d = -(dy1_dx * dy2_dy * dy3_dz + dy1_dy * dy2_dz * dy3_dx + dy1_dz * dy2_dx * dy3_dy -
-			dy3_dx * dy2_dy * dy1_dz - dy3_dy * dy2_dz * dy1_dx - dy3_dz * dy2_dx * dy1_dy);
-
-		// cubic equation.
-		double p = (3 * c - square(b)) / 3.0;
-		double q = (27 * d - 9 * b * c + 2 * cubic(b)) / 27.0;
-
-		double discriminant = square(q / 2.0) + cubic(p / 3.0);
-
-		if (discriminant <= 0.0)
-		{
-			//std::cout << "Yes\n";
-			// three same zero root.
-			if (p == 0 && q == 0)
-				return  0.0;
-
-			// three different real root.
-			double r = sqrtf(-cubic(p / 3.0));
-			double theta = 1.0 / 3.0 * acos(-q / (2 * r));
-			double rt = 2.0 * powf(r, 1.0 / 3.0);
-			double y1 = rt * cos(theta);
-			double y2 = rt * cos(theta + degreesToRadians(120));
-			double y3 = rt * cos(theta + degreesToRadians(240));
-
-			double x1 = y1 - b / 3.0;
-			double x2 = y2 - b / 3.0;
-			double x3 = y3 - b / 3.0;
-			return max3(x1, x2, x3);
-		}
-		else
-			std::cout << "Maybe something wrong with calculateLargestEigenValue!\n";
-
-		return 1.0;
-	}
 }

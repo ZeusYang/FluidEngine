@@ -40,7 +40,7 @@ void FluidPipeDropPciSphFluidDemo::setup(double radius)
 		.withTargetSpacing(radius)
 		.makeShared();
 	solver->setPseudoViscosityCoefficient(0.0);
-	solver->setTimeStepLimitScale(4.0);
+	solver->setTimeStepLimitScale(3.0);
 
 	// Build emitter.
 	BoundingBox3D sourceBound(domain);

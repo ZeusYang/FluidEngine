@@ -13,7 +13,7 @@
 using namespace std;
 using namespace Engine;
 
-#define FORMAT "xyz"
+#define FORMAT "obj"
 #define DESKTOP_PATH "C:/Users/ywc/Desktop"
 
 void runWaterDropSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
@@ -26,10 +26,9 @@ void runSmokeRisingDragonEulerFluidDemo(int numberOfFrames, double fps, const st
 void runBunnyDropEulerFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 void runFluidPipeDropPciSphFluidDemo(int numberOfFrames, double fps, const std::string &dir);
 
-
 int main(int argc, char *argv[])
 {
-	int numberOfFrames = 120;
+	int numberOfFrames = 30;
 	double fps = 30.0;
 	string rootDir = DESKTOP_PATH;
 
@@ -38,8 +37,8 @@ int main(int argc, char *argv[])
 	//runDamBreakingSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingSph/");
 
 	// PciSph example.
-	runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingPciSph/");
-	//runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
+	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/DamBreakingPciSph/");
+	runWaterDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/WaterDropPciSph/");
 	//runFallPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FallPciSph/");
 	//runDamBreakingPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/test/");
 	//runFluidPipeDropPciSphFluidDemo(numberOfFrames, fps, rootDir + "/FluidSimRet/FluidPipe/");

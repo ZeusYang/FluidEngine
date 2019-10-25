@@ -91,6 +91,8 @@ The engine is just for simulation and can use some renderers (such as  [Mitsuba 
 
 [12]  Fedkiw R, Stam J, Jensen H W. Visual simulation of smoke[C]// Conference on Computer Graphics & Interactive Techniques. 2001.
 
+[13]  Solenthaler B , Jürg Schläfli, Pajarola R . A unified particle model for fluid-solid interactions[J]. Computer Animation and Virtual Worlds, 2007, 18(1):69-82. 
+
 
 
 ## Acknowledgement

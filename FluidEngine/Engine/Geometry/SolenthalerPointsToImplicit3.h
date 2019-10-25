@@ -27,12 +27,6 @@ namespace Engine
 		double _cutOffThreshold = 0.25;
 		bool _isOutputSdf = true;
 
-		//! Calculate the largest eigenvalue of 3x3 Jacobian matrix.
-		double calculateLargestEigenValue(
-			double dy1_dx, double dy1_dy, double dy1_dz,
-			double dy2_dx, double dy2_dy, double dy2_dz,
-			double dy3_dx, double dy3_dy, double dy3_dz) const;
-
 	};
 
 }
