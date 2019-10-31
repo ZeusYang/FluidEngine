@@ -51,6 +51,12 @@
     <ClCompile Include="FluidPipeDropPciSphFluidDemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BunnyDropPciSphFluidDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HemispherePcisphFluidDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluidDemo.h">
@@ -87,6 +93,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="FluidPipeDropPciSphFluidDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BunnyDropPciSphFluidDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HemispherePcisphFluidDemo.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

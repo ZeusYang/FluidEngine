@@ -44,8 +44,7 @@ namespace Engine
 	void PhysicsAnimation::onUpdate(const Frame& frame) {
 		if (frame.index > _currentFrame.index) 
 		{
-			if (_currentFrame.index < 0) 
-				initialize();
+			initialize();
 			int32_t numberOfFrames = frame.index - _currentFrame.index;
 			for (int32_t i = 0; i < numberOfFrames; ++i) 
 				advanceTimeStep(frame.timeIntervalInSeconds);
@@ -107,7 +106,14 @@ namespace Engine
 		}
 	}
 
-	void PhysicsAnimation::initialize() { onInitialize(); }
+	void PhysicsAnimation::initialize() 
+	{ 
+		if (!_isInitialized)
+		{
+			onInitialize();
+			_isInitialized = true;
+		}
+	}
 
 	void PhysicsAnimation::onInitialize() { }
 }

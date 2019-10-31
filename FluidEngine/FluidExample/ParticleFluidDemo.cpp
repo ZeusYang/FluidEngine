@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <sstream>
 #include <direct.h>
 #include <algorithm>
 
@@ -29,7 +30,9 @@ void ParticleFluidDemo::run(const std::string & rootDir, int numberOfFrames,
 	auto particles = _solver->particleSystemData();
 	std::cout << "Number of particles: " << particles->numberOfParticles() << std::endl;
 
-	for (Frame frame(0, 1.0 / fps); frame.index < numberOfFrames; ++frame)
+	Frame curFrame(_bFrame - 1, 1.0 / fps);
+	_solver->setCurrentFrame(curFrame);
+	for (Frame frame(_bFrame, 1.0 / fps); frame.index < (_bFrame + numberOfFrames); ++frame)
 	{
 		_solver->update(frame);
 		if (format == "xyz")
@@ -87,9 +90,9 @@ void ParticleFluidDemo::saveParticleAsObj(const Engine::ParticleSystemData3Ptr &
 	double midX = (maxX + minX) / 2;
 	double midY = minY + (maxY - minY) * 0.3;
 	double midZ = (maxZ + minZ) / 2;
-	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 2.3;
+	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 1.6;
 	Vector3D target({ midX, midY, midZ });
-	Vector3D origin({ 0.3,0.5,1 });
+	Vector3D origin({ 0.3,0.4,1 });
 	origin.normalize();
 	origin = origin * longest + target;
 	if (xmlfile)
@@ -154,9 +157,9 @@ void ParticleFluidDemo::saveParticleAsXml(const Engine::ParticleSystemData3Ptr &
 	double midX = (maxX + minX) / 2;
 	double midY = minY + (maxY - minY) * 0.3;
 	double midZ = (maxZ + minZ) / 2;
-	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 2.3;
+	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 1.6;
 	Vector3D target({ midX, midY, midZ });
-	Vector3D origin({ -0.3,0.5,-1 });
+	Vector3D origin({ -0.3,0.4,-1 });
 	origin.normalize();
 	origin = origin * longest + target;
 		
@@ -288,9 +291,9 @@ void ParticleFluidDemo::saveParticleAsXyz(const Engine::ParticleSystemData3Ptr &
 	double midX = (maxX + minX) / 2;
 	double midY = minY + (maxY - minY) * 0.3;
 	double midZ = (maxZ + minZ) / 2;
-	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 2.3;
+	double longest = std::max(std::max(maxX - minX, maxY - minY), maxZ - minZ) * 1.6;
 	Vector3D target({ midX, midY, midZ });
-	Vector3D origin({ 0.3,0.5,1 });
+	Vector3D origin({ 0.3,0.4,1 });
 	origin.normalize();
 	origin = origin * longest + target;
 	if (xmlfile)
@@ -339,4 +342,50 @@ void ParticleFluidDemo::saveParticleAsXyz(const Engine::ParticleSystemData3Ptr &
 	else
 		std::cout << "Failed to save the file:" << filename << std::endl;
 
+}
+
+void ParticleFluidDemo::readParticleFromFile(Array1<Vector3D>& positions,
+	const std::string & rootDir, int frameCnt)
+{
+	char basename[256];
+	snprintf(basename, sizeof(basename), "frame_%06d.xyz", frameCnt);
+	std::string filename = rootDir + basename;
+	std::ifstream file(filename.c_str());
+	if (file)
+	{
+		std::string line;
+
+		//! min point of bounding box.
+		std::getline(file, line);
+
+		//! max point of bounding box.
+		std::getline(file, line);
+
+		//! kernel radius.
+		std::getline(file, line);
+
+		//! particle radius.
+		std::getline(file, line);
+
+		//! particle mass.
+		std::getline(file, line);
+
+		//! particles' positions and densities.
+		while (std::getline(file, line))
+		{
+			std::stringstream str;
+			str << line;
+			Vector3D tmp;
+			str >> tmp.x;
+			str >> tmp.y;
+			str >> tmp.z;
+			positions.append(tmp);
+		}
+
+		file.close();
+	}
+	else
+		std::cout << "Failed to read the file:" << filename << std::endl;
+
+	return;
 }

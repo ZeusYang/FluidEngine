@@ -326,6 +326,7 @@
     <ClCompile Include="Engine\Simulation\PointParallelHashGridSearcher3.cpp" />
     <ClCompile Include="Engine\Simulation\PointParticleEmitter2.cpp" />
     <ClCompile Include="Engine\Simulation\PointParticleEmitter3.cpp" />
+    <ClCompile Include="Engine\Simulation\RawParticleEmitter3.cpp" />
     <ClCompile Include="Engine\Simulation\RigidBodyCollider2.cpp" />
     <ClCompile Include="Engine\Simulation\RigidBodyCollider3.cpp" />
     <ClCompile Include="Engine\Simulation\SemiLagrangian2.cpp" />
@@ -567,6 +568,7 @@
     <ClInclude Include="Engine\Simulation\PointParallelHashGridSearcher3.h" />
     <ClInclude Include="Engine\Simulation\PointParticleEmitter2.h" />
     <ClInclude Include="Engine\Simulation\PointParticleEmitter3.h" />
+    <ClInclude Include="Engine\Simulation\RawParticleEmitter3.h" />
     <ClInclude Include="Engine\Simulation\RigidBodyCollider2.h" />
     <ClInclude Include="Engine\Simulation\RigidBodyCollider3.h" />
     <ClInclude Include="Engine\Simulation\SemiLagrangian2.h" />

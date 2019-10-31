@@ -60,7 +60,7 @@ namespace Engine
 		void onBeginAdvanceTimeStep(double timeStepInSeconds) override;
 
 	private:
-		double _maxDensityErrorRatio = 0.01;
+		double _maxDensityErrorRatio = 0.05;
 		unsigned int _maxNumberOfIterations = 5;
 
 		ParticleSystemData3::VectorData _tempPositions;

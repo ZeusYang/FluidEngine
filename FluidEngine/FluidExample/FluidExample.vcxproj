@@ -140,11 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BunnyDropEulerLiquidDemo.cpp" />
+    <ClCompile Include="BunnyDropPciSphFluidDemo.cpp" />
     <ClCompile Include="DamBreakingPciSphFluidDemo.cpp" />
     <ClCompile Include="DamBreakingSphFluidDemo.cpp" />
     <ClCompile Include="EulerFluidDemo.cpp" />
     <ClCompile Include="FallPciSphFluidDemo.cpp" />
     <ClCompile Include="FluidPipeDropPciSphFluidDemo.cpp" />
+    <ClCompile Include="HemispherePcisphFluidDemo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleFluidDemo.cpp" />
     <ClCompile Include="SmokeRisingDragonEulerFluidDemo.cpp" />
@@ -154,12 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BunnyDropEulerLiquidDemo.h" />
+    <ClInclude Include="BunnyDropPciSphFluidDemo.h" />
     <ClInclude Include="DamBreakingPciSphFluidDemo.h" />
     <ClInclude Include="DamBreakingSphFluidDemo.h" />
     <ClInclude Include="EulerFluidDemo.h" />
     <ClInclude Include="FallPciSphFluidDemo.h" />
     <ClInclude Include="FluidDemo.h" />
     <ClInclude Include="FluidPipeDropPciSphFluidDemo.h" />
+    <ClInclude Include="HemispherePcisphFluidDemo.h" />
     <ClInclude Include="ParticleFluidDemo.h" />
     <ClInclude Include="SmokeRisingDragonEulerFluidDemo.h" />
     <ClInclude Include="SmokeRisingEulerFluidDemo.h" />

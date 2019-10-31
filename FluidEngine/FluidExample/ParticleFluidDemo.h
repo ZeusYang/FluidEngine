@@ -3,6 +3,8 @@
 #include "FluidDemo.h"
 
 #include "Engine/Math/Size3.h"
+#include "Engine/Math/Array1.h"
+#include "Engine/Math/Vector3.h"
 #include "Engine/Simulation/ParticleSystemData3.h"
 #include "Engine/Simulation/ParticleSystemSolver3.h"
 
@@ -21,6 +23,7 @@ public:
 		const std::string &format, double fps) override;
 
 protected:
+	int _bFrame = 0;
 	std::string _sceneXml;
 	double maxX, maxY, maxZ;
 	double minX, minY, minZ;
@@ -40,6 +43,9 @@ protected:
 		const std::string &rootDir, int frameCnt);
 
 	void saveParticleAsXyz(const Engine::ParticleSystemData3Ptr &particles,
+		const std::string &rootDir, int frameCnt);
+
+	void readParticleFromFile(Engine::Array1<Engine::Vector3D> &positions,
 		const std::string &rootDir, int frameCnt);
 
 };

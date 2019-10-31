@@ -127,6 +127,7 @@ namespace Engine
 
 	private:
 		Frame _currentFrame;
+		bool _isInitialized = false;
 		bool _isUsingFixedSubTimeSteps = true;
 		unsigned int _numberOfFixedSubTimeSteps = 1;
 		double _currentTime = 0.0;
